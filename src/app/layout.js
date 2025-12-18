@@ -142,7 +142,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased overflow-x-hidden">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 
