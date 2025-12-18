@@ -6,7 +6,7 @@ import PageTransition from '@/components/PageTransition';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import Button from '@/components/ui/Button';
-import { FadeIn, SlideIn } from '@/components/animations/ScrollAnimations';
+import { FadeIn } from '@/components/animations/ScrollAnimations';
 import { 
   Send, Mail, Phone, MapPin, Clock, CheckCircle, 
   Instagram, Linkedin, Facebook 
@@ -114,8 +114,8 @@ export default function ContactPage() {
       <main id="main-content">
         {/* Hero Section */}
         <section className="relative min-h-[50vh] flex items-center justify-center bg-[#0a0a0a] overflow-hidden pt-24">
-          <div className="absolute inset-0">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ED2028]/10 rounded-full blur-3xl" />
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#ED2028]/10 rounded-full blur-3xl" />
           </div>
           
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
@@ -146,7 +146,7 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-5 gap-16">
               {/* Contact Info */}
               <div className="lg:col-span-2">
-                <SlideIn direction="left">
+                <FadeIn>
                   <div className="space-y-10">
                     <div>
                       <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#0a0a0a] mb-4">
@@ -216,12 +216,12 @@ export default function ContactPage() {
                       />
                     </div>
                   </div>
-                </SlideIn>
+                </FadeIn>
               </div>
 
               {/* Contact Form */}
               <div className="lg:col-span-3">
-                <SlideIn direction="right">
+                <FadeIn delay={0.2}>
                   <div className="bg-white p-8 md:p-12 shadow-xl">
                     {isSubmitted ? (
                       <motion.div
@@ -348,7 +348,7 @@ export default function ContactPage() {
                       </>
                     )}
                   </div>
-                </SlideIn>
+                </FadeIn>
               </div>
             </div>
           </div>

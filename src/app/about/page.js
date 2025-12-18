@@ -7,7 +7,7 @@ import PageTransition from '@/components/PageTransition';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import Button from '@/components/ui/Button';
-import { FadeIn, SlideIn, Counter } from '@/components/animations/ScrollAnimations';
+import { FadeIn, Counter } from '@/components/animations/ScrollAnimations';
 import { ArrowRight, Award, Users, Target, Gem, CheckCircle, Shield, Heart, Sparkles } from 'lucide-react';
 
 const stats = [
@@ -57,9 +57,9 @@ export default function AboutPage() {
       <main id="main-content">
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center bg-[#fafafa] overflow-hidden pt-24">
-          <div className="absolute inset-0">
-            <div className="absolute top-20 right-20 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 left-20 w-64 h-64 bg-[#ED2028]/3 rounded-full blur-2xl" />
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-20 right-10 md:right-20 w-64 md:w-96 h-64 md:h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 left-10 md:left-20 w-48 md:w-64 h-48 md:h-64 bg-[#ED2028]/3 rounded-full blur-2xl" />
           </div>
           
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-20 text-center">
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <section className="py-20 md:py-28 bg-white">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <SlideIn direction="left">
+              <FadeIn>
                 <div className="relative">
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <Image
@@ -98,12 +98,12 @@ export default function AboutPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="absolute -bottom-8 -right-8 w-48 h-48 border-2 border-[#ED2028]/20 hidden lg:block" />
-                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#ED2028] hidden lg:block" />
+                  <div className="absolute -bottom-4 -right-4 lg:-bottom-8 lg:-right-8 w-32 lg:w-48 h-32 lg:h-48 border-2 border-[#ED2028]/20 hidden md:block" />
+                  <div className="absolute -top-2 -left-2 lg:-top-4 lg:-left-4 w-16 lg:w-24 h-16 lg:h-24 bg-[#ED2028] hidden md:block" />
                 </div>
-              </SlideIn>
+              </FadeIn>
 
-              <SlideIn direction="right">
+              <FadeIn delay={0.2}>
                 <div className="space-y-6">
                   <span className="inline-block text-[#ED2028] font-nav text-sm uppercase tracking-[0.2em]">
                     Our Story
@@ -137,7 +137,7 @@ export default function AboutPage() {
                     </Link>
                   </div>
                 </div>
-              </SlideIn>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -283,7 +283,7 @@ export default function AboutPage() {
                 </div>
               </FadeIn>
 
-              <SlideIn direction="right">
+              <FadeIn delay={0.2}>
                 <div className="relative aspect-square">
                   <Image
                     src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
@@ -292,12 +292,12 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                   {/* Overlay badge */}
-                  <div className="absolute bottom-8 left-8 bg-[#ED2028] p-6 text-white">
-                    <p className="font-heading text-4xl font-bold">15+</p>
+                  <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 bg-[#ED2028] p-4 md:p-6 text-white">
+                    <p className="font-heading text-3xl md:text-4xl font-bold">15+</p>
                     <p className="font-nav text-xs uppercase tracking-wider mt-1">Years of Excellence</p>
                   </div>
                 </div>
-              </SlideIn>
+              </FadeIn>
             </div>
           </div>
         </section>

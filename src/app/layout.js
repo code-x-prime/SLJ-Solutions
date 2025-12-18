@@ -142,18 +142,20 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="antialiased overflow-x-hidden">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 
-                     bg-[#ED2028] text-white px-4 py-2 z-[100] font-nav text-sm"
-        >
-          Skip to main content
-        </a>
+      <body className="antialiased overflow-x-hidden min-h-screen">
+        <div className="overflow-x-hidden w-full relative">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 
+                       bg-[#ED2028] text-white px-4 py-2 z-[100] font-nav text-sm"
+          >
+            Skip to main content
+          </a>
 
-        <ModalProvider>
-          {children}
-        </ModalProvider>
+          <ModalProvider>
+            {children}
+          </ModalProvider>
+        </div>
       </body>
     </html>
   );

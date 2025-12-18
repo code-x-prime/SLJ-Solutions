@@ -65,11 +65,12 @@ export function SlideIn({
   const ref = useRef(null);
   const isInView = useInView(ref, { once, amount });
 
+  // Reduced values to prevent mobile overflow
   const directions = {
-    left: { x: -100, y: 0 },
-    right: { x: 100, y: 0 },
-    up: { x: 0, y: 100 },
-    down: { x: 0, y: -100 },
+    left: { x: -40, y: 0 },
+    right: { x: 40, y: 0 },
+    up: { x: 0, y: 60 },
+    down: { x: 0, y: -60 },
   };
 
   return (
@@ -302,8 +303,8 @@ export function Parallax({
 // ============================================
 // MAGNETIC EFFECT
 // ============================================
-export function Magnetic({ 
-  children, 
+export function Magnetic({
+  children,
   className = '',
   strength = 0.15,
 }) {
@@ -354,8 +355,8 @@ export function BlurIn({
     <motion.div
       ref={ref}
       initial={{ opacity: 0, filter: 'blur(20px)' }}
-      animate={isInView 
-        ? { opacity: 1, filter: 'blur(0px)' } 
+      animate={isInView
+        ? { opacity: 1, filter: 'blur(0px)' }
         : { opacity: 0, filter: 'blur(20px)' }
       }
       transition={{
@@ -389,8 +390,8 @@ export function RotateIn({
     <motion.div
       ref={ref}
       initial={{ opacity: 0, rotate: degrees, y: 30 }}
-      animate={isInView 
-        ? { opacity: 1, rotate: 0, y: 0 } 
+      animate={isInView
+        ? { opacity: 1, rotate: 0, y: 0 }
         : { opacity: 0, rotate: degrees, y: 30 }
       }
       transition={{
@@ -434,13 +435,13 @@ export function Counter({
         requestAnimationFrame(updateCount);
         return;
       }
-      
+
       const progress = Math.min((now - startTime) / (duration * 1000), 1);
       const easeProgress = 1 - Math.pow(1 - progress, 3); // Ease out cubic
       const currentCount = Math.round(from + (to - from) * easeProgress);
-      
+
       setCount(currentCount);
-      
+
       if (progress < 1) {
         requestAnimationFrame(updateCount);
       }
@@ -528,12 +529,12 @@ export function LineDraw({
     <motion.div
       ref={ref}
       className={className}
-      initial={{ 
-        scaleX: isHorizontal ? 0 : 1, 
-        scaleY: isHorizontal ? 1 : 0 
+      initial={{
+        scaleX: isHorizontal ? 0 : 1,
+        scaleY: isHorizontal ? 1 : 0
       }}
-      animate={isInView 
-        ? { scaleX: 1, scaleY: 1 } 
+      animate={isInView
+        ? { scaleX: 1, scaleY: 1 }
         : { scaleX: isHorizontal ? 0 : 1, scaleY: isHorizontal ? 1 : 0 }
       }
       transition={{

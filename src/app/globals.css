@@ -85,12 +85,19 @@
   }
 
   /* Interactive elements get pointer cursor */
-  a, button, [role="button"] {
+  a,
+  button,
+  [role="button"] {
     cursor: pointer;
   }
 
   /* Premium Heading Styles */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
     font-weight: 600;
     line-height: 1.1;
@@ -119,7 +126,8 @@
   }
 
   /* Navigation Text */
-  nav, .nav-text {
+  nav,
+  .nav-text {
     font-family: var(--font-nav);
   }
 
@@ -245,15 +253,26 @@
   }
 
   /* Animation delays */
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
 
   /* Hover lift effect */
   .hover-lift {
-    transition: transform 0.4s var(--ease-luxury), box-shadow 0.4s var(--ease-luxury);
+    transition: transform 0.4s var(--ease-luxury),
+      box-shadow 0.4s var(--ease-luxury);
   }
 
   .hover-lift:hover {
@@ -310,7 +329,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ED2028;
+  background: #ed2028;
   border-radius: 4px;
 }
 
@@ -321,7 +340,7 @@
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #ED2028 #f5f5f5;
+  scrollbar-color: #ed2028 #f5f5f5;
 }
 
 /* Selection color */
@@ -335,7 +354,8 @@
    ============================================ */
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -344,7 +364,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(237, 32, 40, 0.3);
   }
   50% {
@@ -501,7 +522,7 @@
 
 /* Focus visible for accessibility */
 :focus-visible {
-  outline: 2px solid #ED2028;
+  outline: 2px solid #ed2028;
   outline-offset: 2px;
 }
 
