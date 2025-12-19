@@ -18,10 +18,11 @@ const footerLinks = {
     { name: 'Contact', href: '/contact' },
   ],
   services: [
-    { name: 'Turnkey Construction', href: '/services' },
+    { name: 'Turnkey Projects', href: '/services' },
     { name: 'Office Interiors', href: '/services' },
+    { name: 'Residential Interiors', href: '/services' },
     { name: 'Modular Kitchens', href: '/services' },
-    { name: 'IKEA Furnishing', href: '/services' },
+    { name: 'Landscaping', href: '/services' },
   ],
 };
 
