@@ -16,7 +16,7 @@ const createTransporter = () => {
 // Send email function
 export const sendEmail = async ({ to, subject, text, html }) => {
   const transporter = createTransporter();
-  
+
   const mailOptions = {
     from: `"SLJ Solutions" <${process.env.NEXT_PUBLIC_FROM_EMAIL}>`,
     to,
@@ -32,7 +32,7 @@ export const sendEmail = async ({ to, subject, text, html }) => {
 // Admin Email Template - When someone submits enquiry
 export const getAdminEmailTemplate = (formData) => {
   const { name, email, phone, message, projectType, subject } = formData;
-  
+
   return `
 <!DOCTYPE html>
 <html>
