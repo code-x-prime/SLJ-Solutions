@@ -6,27 +6,28 @@ import { Send, Mail, Phone, MapPin, Clock, CheckCircle, ArrowRight } from 'lucid
 
 const contactInfo = [
   {
+    icon: Phone,
+    title: 'Phone',
+    content: '+91 99535 51248',
+    subContent: '+91 88600 36536',
+    href: 'tel:+919953551248',
+  },
+  {
     icon: Mail,
     title: 'Email',
     content: 'sales@sljsolutions.com',
     href: 'mailto:sales@sljsolutions.com',
   },
   {
-    icon: Phone,
-    title: 'Phone',
-    content: '+1 (234) 567-890',
-    href: 'tel:+1234567890',
-  },
-  {
     icon: MapPin,
     title: 'Office',
-    content: '123 Design Avenue, New York, NY 10001',
-    href: null,
+    content: 'Krishna Nagar, New Delhi - 110092',
+    href: 'https://maps.google.com/?q=Krishna+Nagar+New+Delhi',
   },
   {
     icon: Clock,
     title: 'Hours',
-    content: 'Mon - Fri: 9AM - 6PM',
+    content: 'Mon - Sat: 10AM - 7PM',
     href: null,
   },
 ];
@@ -262,9 +263,14 @@ export default function ContactSection() {
                                      group-hover:text-white/70 transition-colors duration-300 mb-1">
                           {item.title}
                         </h4>
-                        <p className="text-[#1a1a1a] group-hover:text-white transition-colors duration-300 font-medium">
+                        <p className="text-[#1a1a1a] group-hover:text-white transition-colors duration-300 font-medium text-sm">
                           {item.content}
                         </p>
+                        {item.subContent && (
+                          <p className="text-[#1a1a1a] group-hover:text-white transition-colors duration-300 font-medium text-sm">
+                            {item.subContent}
+                          </p>
+                        )}
                       </a>
                     ) : (
                       <div className="p-6 bg-gray-50">
@@ -274,7 +280,7 @@ export default function ContactSection() {
                         <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-1">
                           {item.title}
                         </h4>
-                        <p className="text-[#1a1a1a] font-medium">
+                        <p className="text-[#1a1a1a] font-medium text-sm">
                           {item.content}
                         </p>
                       </div>
@@ -293,7 +299,7 @@ export default function ContactSection() {
                 {/* Map container */}
                 <div className="absolute inset-0 bg-gray-100">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095919964!2d-74.00425878459447!3d40.71277597933104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a1f1f1f1f1f%3A0x1f1f1f1f1f1f1f1f!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.5091839761!2d77.2773!3d28.6592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb9c9b8b8b8b%3A0x0!2sKrishna%20Nagar%2C%20Delhi!5e0!3m2!1sen!2sin!4v1234567890"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -315,7 +321,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider">Location</p>
-                    <p className="text-sm font-medium text-[#1a1a1a]">New York, NY</p>
+                    <p className="text-sm font-medium text-[#1a1a1a]">New Delhi, India</p>
                   </div>
                 </div>
               </motion.div>
