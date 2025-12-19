@@ -55,17 +55,29 @@ export default function AboutPage() {
       <Navbar />
       
       <main id="main-content">
-        {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center bg-[#fafafa] overflow-hidden pt-24">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-20 right-10 md:right-20 w-64 md:w-96 h-64 md:h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 left-10 md:left-20 w-48 md:w-64 h-48 md:h-64 bg-[#ED2028]/3 rounded-full blur-2xl" />
-          </div>
+        {/* Hero Section - Light & Graceful */}
+        <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-white via-gray-50 to-[#ED2028]/5">
+          {/* Subtle decorative elements */}
+          <div className="absolute top-20 right-0 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray-100 rounded-full blur-3xl" />
           
-          <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-20 text-center">
+          {/* Grid pattern overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: 'linear-gradient(#0a0a0a 1px, transparent 1px), linear-gradient(90deg, #0a0a0a 1px, transparent 1px)',
+              backgroundSize: '60px 60px'
+            }}
+          />
+          
+          <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
             <FadeIn>
-              <span className="inline-block text-[#ED2028] font-nav text-sm uppercase tracking-[0.2em] mb-6">
-                About Us
+              <span className="inline-flex items-center gap-3 mb-6">
+                <span className="w-12 h-px bg-[#ED2028]" />
+                <span className="text-[#ED2028] font-nav text-sm uppercase tracking-[0.2em]">
+                  About Us
+                </span>
+                <span className="w-12 h-px bg-[#ED2028]" />
               </span>
             </FadeIn>
             
@@ -82,6 +94,9 @@ export default function AboutPage() {
               </p>
             </FadeIn>
           </div>
+
+          {/* Bottom border accent */}
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ED2028]/30 to-transparent" />
         </section>
 
         {/* Company Introduction */}
