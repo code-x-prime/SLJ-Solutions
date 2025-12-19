@@ -112,32 +112,48 @@ export default function ContactPage() {
       <Navbar />
       
       <main id="main-content">
-        {/* Hero Section */}
-        <section className="relative min-h-[50vh] flex items-center justify-center bg-[#0a0a0a] overflow-hidden pt-24">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#ED2028]/10 rounded-full blur-3xl" />
-          </div>
+        {/* Hero Section - Light & Graceful */}
+        <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-white via-gray-50 to-[#ED2028]/5">
+          {/* Subtle decorative elements */}
+          <div className="absolute top-20 right-0 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray-100 rounded-full blur-3xl" />
+          
+          {/* Grid pattern overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: 'linear-gradient(#0a0a0a 1px, transparent 1px), linear-gradient(90deg, #0a0a0a 1px, transparent 1px)',
+              backgroundSize: '60px 60px'
+            }}
+          />
           
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
             <FadeIn>
-              <span className="inline-block text-[#ED2028] font-nav text-sm uppercase tracking-[0.2em] mb-6">
-                Get In Touch
+              <span className="inline-flex items-center gap-3 mb-6">
+                <span className="w-12 h-px bg-[#ED2028]" />
+                <span className="text-[#ED2028] font-nav text-sm uppercase tracking-[0.2em]">
+                  Get In Touch
+                </span>
+                <span className="w-12 h-px bg-[#ED2028]" />
               </span>
             </FadeIn>
             
             <FadeIn delay={0.1}>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a0a0a] mb-6">
                 Contact <span className="text-[#ED2028]">Us</span>
               </h1>
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <p className="text-lg md:text-xl text-gray-400 font-body max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 font-body max-w-2xl mx-auto leading-relaxed">
                 Ready to transform your space? Reach out to us and let&apos;s discuss 
                 how we can bring your vision to life.
               </p>
             </FadeIn>
           </div>
+
+          {/* Bottom border accent */}
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ED2028]/30 to-transparent" />
         </section>
 
         {/* Contact Section */}

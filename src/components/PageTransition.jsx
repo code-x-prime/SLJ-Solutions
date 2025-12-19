@@ -4,32 +4,38 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-export default function PageTransition({ children }) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
+export default function PageTransition({ children, showLoader = false }) {
+  const [isLoading, setIsLoading] = useState(showLoader);
+  const [progress, setProgress] = useState(showLoader ? 0 : 100);
 
   useEffect(() => {
-    // Simulate loading progress
+    // If loader is disabled, content shows immediately
+    if (!showLoader) {
+      setIsLoading(false);
+      return;
+    }
+
+    // Fast loading progress - only 800ms total
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           return 100;
         }
-        return prev + Math.random() * 15;
+        return prev + Math.random() * 25; // Faster progress
       });
-    }, 100);
+    }, 80);
 
-    // End loading after animation completes
+    // Quick 800ms loading - enough to show animation but not delay
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 800);
 
     return () => {
       clearInterval(interval);
       clearTimeout(timer);
     };
-  }, []);
+  }, [showLoader]);
 
   return (
     <>
@@ -114,11 +120,11 @@ export default function PageTransition({ children }) {
         )}
       </AnimatePresence>
 
-      {/* Main Content */}
+      {/* Main Content - Shows instantly when loader is disabled */}
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: showLoader ? 0 : 1 }}
         animate={{ opacity: isLoading ? 0 : 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0 }}
       >
         {children}
       </motion.div>
