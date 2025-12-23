@@ -153,7 +153,7 @@ export default function RootLayout({ children }) {
           </a>
 
           <ModalProvider>
-            {children}
+        {children}
           </ModalProvider>
         </div>
       </body>

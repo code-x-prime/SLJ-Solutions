@@ -92,37 +92,37 @@ export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
+  const filteredProjects = activeCategory === 'All'
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   return (
     <PageTransition>
       <Navbar />
-      
+
       <main id="main-content">
         {/* Hero Section */}
         <section className="relative min-h-[50vh] flex items-center justify-center bg-[#fafafa] overflow-hidden pt-24">
           <div className="absolute inset-0">
             <div className="absolute top-20 right-20 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
           </div>
-          
+
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
             <FadeIn>
               <span className="inline-block text-[#ED2028] font-nav text-sm uppercase tracking-[0.2em] mb-6">
                 Our Work
               </span>
             </FadeIn>
-            
+
             <FadeIn delay={0.1}>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a0a0a] mb-6">
                 Featured <span className="text-[#ED2028]">Projects</span>
               </h1>
             </FadeIn>
-            
+
             <FadeIn delay={0.2}>
               <p className="text-lg md:text-xl text-gray-600 font-body max-w-2xl mx-auto leading-relaxed">
-                Explore our portfolio of completed projects showcasing our expertise 
+                Explore our portfolio of completed projects showcasing our expertise
                 in residential, commercial, and modular interior solutions.
               </p>
             </FadeIn>
@@ -137,11 +137,10 @@ export default function ProjectsPage() {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-2.5 text-sm font-nav uppercase tracking-wider transition-all duration-300 ${
-                    activeCategory === category
+                  className={`px-6 py-2.5 text-sm font-nav uppercase tracking-wider transition-all duration-300 ${activeCategory === category
                       ? 'bg-[#ED2028] text-white'
                       : 'bg-transparent text-gray-600 hover:text-[#ED2028]'
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>
@@ -153,8 +152,8 @@ export default function ProjectsPage() {
         {/* Projects Grid */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
-            <motion.div 
-              layout 
+            <motion.div
+              layout
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               <AnimatePresence mode="popLayout">
@@ -180,17 +179,17 @@ export default function ProjectsPage() {
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        
+
                         {/* Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        
+
                         {/* View button */}
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                           <span className="flex items-center justify-center w-14 h-14 bg-[#ED2028] text-white">
                             <Maximize2 size={22} />
                           </span>
                         </div>
-                        
+
                         {/* Category tag */}
                         <span className="absolute top-4 left-4 bg-white/95 px-3 py-1.5 text-xs font-nav uppercase tracking-wider text-[#0a0a0a]">
                           {project.category}
@@ -252,7 +251,7 @@ export default function ProjectsPage() {
             onClick={() => setSelectedProject(null)}
           >
             <div className="absolute inset-0 bg-black/90" />
-            
+
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -282,11 +281,11 @@ export default function ProjectsPage() {
                   <span className="inline-block text-[#ED2028] font-nav text-xs uppercase tracking-[0.2em] mb-4">
                     {selectedProject.category}
                   </span>
-                  
+
                   <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#0a0a0a] mb-4">
                     {selectedProject.title}
                   </h2>
-                  
+
                   <p className="text-gray-600 font-body leading-relaxed mb-8">
                     {selectedProject.description}
                   </p>

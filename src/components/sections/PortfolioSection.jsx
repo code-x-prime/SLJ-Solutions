@@ -187,7 +187,7 @@ export default function PortfolioSection() {
               custom={0.2}
               className="text-lg text-gray-500"
             >
-              Explore our curated collection of luxury interiors, each telling a unique story 
+              Explore our curated collection of luxury interiors, each telling a unique story
               of craftsmanship and design excellence.
             </motion.p>
           </div>
@@ -207,16 +207,16 @@ export default function PortfolioSection() {
                 className={`relative px-6 py-3 text-sm font-medium uppercase tracking-wider 
                           transition-all duration-300 overflow-hidden group
                           ${activeCategory === category
-                            ? 'text-white'
-                            : 'text-gray-600 hover:text-[#1a1a1a]'
-                          }`}
+                    ? 'text-white'
+                    : 'text-gray-600 hover:text-[#1a1a1a]'
+                  }`}
               >
                 {/* Background */}
                 <span className={`absolute inset-0 transition-transform duration-500 ease-out
-                                ${activeCategory === category 
-                                  ? 'bg-[#ED2028] scale-100' 
-                                  : 'bg-gray-100 scale-100 group-hover:bg-gray-200'
-                                }`} 
+                                ${activeCategory === category
+                    ? 'bg-[#ED2028] scale-100'
+                    : 'bg-gray-100 scale-100 group-hover:bg-gray-200'
+                  }`}
                 />
                 {/* Text */}
                 <span className="relative z-10">{category}</span>
@@ -280,7 +280,7 @@ export default function PortfolioSection() {
                         className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-xs 
                                   font-semibold uppercase tracking-wider"
                         initial={{ opacity: 0, y: -20 }}
-                        animate={{ 
+                        animate={{
                           opacity: hoveredProject === project.id ? 1 : 0,
                           y: hoveredProject === project.id ? 0 : -20,
                         }}
@@ -292,7 +292,7 @@ export default function PortfolioSection() {
                       <motion.div
                         className="w-14 h-14 rounded-full bg-white flex items-center justify-center"
                         initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
-                        animate={{ 
+                        animate={{
                           opacity: hoveredProject === project.id ? 1 : 0,
                           scale: hoveredProject === project.id ? 1 : 0.5,
                           rotate: hoveredProject === project.id ? 0 : -45,
@@ -309,7 +309,7 @@ export default function PortfolioSection() {
                       <motion.span
                         className="block text-white/40 text-sm font-medium mb-2"
                         initial={{ opacity: 0, x: -20 }}
-                        animate={{ 
+                        animate={{
                           opacity: hoveredProject === project.id ? 1 : 0,
                           x: hoveredProject === project.id ? 0 : -20,
                         }}
@@ -320,15 +320,14 @@ export default function PortfolioSection() {
 
                       {/* Title - always visible on large, hover on others */}
                       <motion.h3
-                        className={`font-serif text-white mb-3 ${
-                          project.size === 'large' 
-                            ? 'text-3xl md:text-5xl' 
+                        className={`font-serif text-white mb-3 ${project.size === 'large'
+                            ? 'text-3xl md:text-5xl'
                             : project.size === 'tall'
                               ? 'text-2xl md:text-4xl'
                               : 'text-2xl md:text-3xl'
-                        }`}
+                          }`}
                         initial={{ opacity: project.size === 'large' ? 1 : 0, y: 20 }}
-                        animate={{ 
+                        animate={{
                           opacity: hoveredProject === project.id || project.size === 'large' ? 1 : 0,
                           y: hoveredProject === project.id || project.size === 'large' ? 0 : 20,
                         }}
@@ -341,7 +340,7 @@ export default function PortfolioSection() {
                       <motion.div
                         className="flex items-center gap-4 text-white/80 text-sm"
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ 
+                        animate={{
                           opacity: hoveredProject === project.id ? 1 : 0,
                           y: hoveredProject === project.id ? 0 : 20,
                         }}
@@ -362,7 +361,7 @@ export default function PortfolioSection() {
                         <motion.p
                           className="mt-4 text-white/70 max-w-md hidden md:block"
                           initial={{ opacity: 0, y: 20 }}
-                          animate={{ 
+                          animate={{
                             opacity: hoveredProject === project.id ? 1 : 0,
                             y: hoveredProject === project.id ? 0 : 20,
                           }}
@@ -417,7 +416,7 @@ export default function PortfolioSection() {
             onClick={() => setSelectedProject(null)}
           >
             {/* Backdrop */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-black/95"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -508,8 +507,8 @@ export default function PortfolioSection() {
                     transition={{ delay: 0.4 }}
                     className="text-gray-400 leading-relaxed mb-10"
                   >
-                    Every detail was carefully considered to deliver an exceptional result 
-                    that exceeds expectations. Our team worked closely with the client to 
+                    Every detail was carefully considered to deliver an exceptional result
+                    that exceeds expectations. Our team worked closely with the client to
                     ensure their vision was brought to life with precision and artistry.
                   </motion.p>
 

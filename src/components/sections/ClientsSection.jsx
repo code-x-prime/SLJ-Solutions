@@ -9,8 +9,8 @@ const clients = [
     name: 'DLF',
     logo: (
       <svg viewBox="0 0 160 60" className="w-full h-full">
-        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '28px', fontWeight: '700', fontFamily: 'var(--font-nav)', letterSpacing: '0.1em' }}>
+        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '28px', fontWeight: '700', fontFamily: 'var(--font-nav)', letterSpacing: '0.1em' }}>
           DLF
         </text>
       </svg>
@@ -20,8 +20,8 @@ const clients = [
     name: 'Bestech',
     logo: (
       <svg viewBox="0 0 160 60" className="w-full h-full">
-        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '18px', fontWeight: '600', fontFamily: 'var(--font-nav)', letterSpacing: '0.05em' }}>
+        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '18px', fontWeight: '600', fontFamily: 'var(--font-nav)', letterSpacing: '0.05em' }}>
           BESTECH
         </text>
       </svg>
@@ -31,8 +31,8 @@ const clients = [
     name: 'Ramprastha',
     logo: (
       <svg viewBox="0 0 160 60" className="w-full h-full">
-        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '14px', fontWeight: '600', fontFamily: 'var(--font-nav)', letterSpacing: '0.08em' }}>
+        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '14px', fontWeight: '600', fontFamily: 'var(--font-nav)', letterSpacing: '0.08em' }}>
           RAMPRASTHA
         </text>
       </svg>
@@ -42,8 +42,8 @@ const clients = [
     name: 'BPTP',
     logo: (
       <svg viewBox="0 0 160 60" className="w-full h-full">
-        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '26px', fontWeight: '700', fontFamily: 'var(--font-nav)', letterSpacing: '0.1em' }}>
+        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '26px', fontWeight: '700', fontFamily: 'var(--font-nav)', letterSpacing: '0.1em' }}>
           BPTP
         </text>
       </svg>
@@ -53,12 +53,12 @@ const clients = [
     name: 'Windwod Group',
     logo: (
       <svg viewBox="0 0 160 60" className="w-full h-full">
-        <text x="50%" y="45%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '14px', fontWeight: '600', fontFamily: 'var(--font-nav)', letterSpacing: '0.05em' }}>
+        <text x="50%" y="45%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '14px', fontWeight: '600', fontFamily: 'var(--font-nav)', letterSpacing: '0.05em' }}>
           WINDWOD
         </text>
-        <text x="50%" y="70%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '10px', fontWeight: '400', fontFamily: 'var(--font-nav)', letterSpacing: '0.15em' }}>
+        <text x="50%" y="70%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '10px', fontWeight: '400', fontFamily: 'var(--font-nav)', letterSpacing: '0.15em' }}>
           GROUP
         </text>
       </svg>
@@ -68,12 +68,12 @@ const clients = [
     name: 'The Lodhi',
     logo: (
       <svg viewBox="0 0 160 60" className="w-full h-full">
-        <text x="50%" y="45%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '12px', fontWeight: '400', fontFamily: 'var(--font-heading)', letterSpacing: '0.2em' }}>
+        <text x="50%" y="45%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '12px', fontWeight: '400', fontFamily: 'var(--font-heading)', letterSpacing: '0.2em' }}>
           THE
         </text>
-        <text x="50%" y="70%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '18px', fontWeight: '600', fontFamily: 'var(--font-heading)', letterSpacing: '0.1em' }}>
+        <text x="50%" y="70%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '18px', fontWeight: '600', fontFamily: 'var(--font-heading)', letterSpacing: '0.1em' }}>
           LODHI
         </text>
       </svg>
@@ -83,8 +83,8 @@ const clients = [
     name: 'OoO',
     logo: (
       <svg viewBox="0 0 160 60" className="w-full h-full">
-        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '24px', fontWeight: '300', fontFamily: 'var(--font-heading)' }}>
+        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '24px', fontWeight: '300', fontFamily: 'var(--font-heading)' }}>
           OoO
         </text>
       </svg>
@@ -94,8 +94,8 @@ const clients = [
     name: 'Premium Clients',
     logo: (
       <svg viewBox="0 0 160 60" className="w-full h-full">
-        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" 
-              className="fill-current" style={{ fontSize: '11px', fontWeight: '500', fontFamily: 'var(--font-nav)', letterSpacing: '0.15em' }}>
+        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle"
+          className="fill-current" style={{ fontSize: '11px', fontWeight: '500', fontFamily: 'var(--font-nav)', letterSpacing: '0.15em' }}>
           AND MANY MORE
         </text>
       </svg>
@@ -118,7 +118,7 @@ export default function ClientsSection() {
         {/* Section Header */}
         <FadeIn>
           <div className="text-center mb-16 md:mb-20">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -130,7 +130,7 @@ export default function ClientsSection() {
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a0a0a]">
               Our Clients
             </h2>
-            <motion.div 
+            <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
@@ -159,7 +159,7 @@ export default function ClientsSection() {
                   </div>
 
                   {/* Hover accent line */}
-                  <motion.div 
+                  <motion.div
                     className="absolute bottom-0 left-0 h-[2px] bg-[#ED2028]"
                     initial={{ width: '0%' }}
                     whileHover={{ width: '100%' }}

@@ -7,9 +7,9 @@ import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import Button from '@/components/ui/Button';
 import { FadeIn } from '@/components/animations/ScrollAnimations';
-import { 
-  Send, Mail, Phone, MapPin, Clock, CheckCircle, 
-  Instagram, Linkedin, Facebook 
+import {
+  Send, Mail, Phone, MapPin, Clock, CheckCircle,
+  Instagram, Linkedin, Facebook
 } from 'lucide-react';
 
 // SLJ Solutions actual contact information
@@ -46,6 +46,20 @@ const socialLinks = [
   { icon: Facebook, href: '#', label: 'Facebook' },
 ];
 
+// Country codes list
+const countryCodes = [
+  { code: '+91', country: 'India', flag: '🇮🇳' },
+  { code: '+1', country: 'USA/Canada', flag: '🇺🇸' },
+  { code: '+44', country: 'UK', flag: '🇬🇧' },
+  { code: '+971', country: 'UAE', flag: '🇦🇪' },
+  { code: '+966', country: 'Saudi Arabia', flag: '🇸🇦' },
+  { code: '+65', country: 'Singapore', flag: '🇸🇬' },
+  { code: '+61', country: 'Australia', flag: '🇦🇺' },
+  { code: '+92', country: 'Pakistan', flag: '🇵🇰' },
+  { code: '+880', country: 'Bangladesh', flag: '🇧🇩' },
+  { code: '+977', country: 'Nepal', flag: '🇳🇵' },
+];
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -53,6 +67,7 @@ export default function ContactPage() {
     email: '',
     message: '',
   });
+  const [countryCode, setCountryCode] = useState('+91'); // Default to India
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -71,6 +86,9 @@ export default function ContactPage() {
     console.log('📧 Contact Form Submitted:', formData);
 
     try {
+      // Combine country code with phone number
+      const fullPhoneNumber = `${countryCode} ${formData.phone}`.trim();
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -78,7 +96,7 @@ export default function ContactPage() {
         },
         body: JSON.stringify({
           name: formData.name,
-          phone: formData.phone,
+          phone: fullPhoneNumber,
           email: formData.email,
           message: formData.message,
         }),
@@ -110,23 +128,23 @@ export default function ContactPage() {
   return (
     <PageTransition>
       <Navbar />
-      
+
       <main id="main-content">
         {/* Hero Section - Light & Graceful */}
         <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-white via-gray-50 to-[#ED2028]/5">
           {/* Subtle decorative elements */}
           <div className="absolute top-20 right-0 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray-100 rounded-full blur-3xl" />
-          
+
           {/* Grid pattern overlay */}
-          <div 
+          <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
               backgroundImage: 'linear-gradient(#0a0a0a 1px, transparent 1px), linear-gradient(90deg, #0a0a0a 1px, transparent 1px)',
               backgroundSize: '60px 60px'
             }}
           />
-          
+
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
             <FadeIn>
               <span className="inline-flex items-center gap-3 mb-6">
@@ -137,16 +155,16 @@ export default function ContactPage() {
                 <span className="w-12 h-px bg-[#ED2028]" />
               </span>
             </FadeIn>
-            
+
             <FadeIn delay={0.1}>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a0a0a] mb-6">
                 Contact <span className="text-[#ED2028]">Us</span>
               </h1>
             </FadeIn>
-            
+
             <FadeIn delay={0.2}>
               <p className="text-lg md:text-xl text-gray-600 font-body max-w-2xl mx-auto leading-relaxed">
-                Ready to transform your space? Reach out to us and let&apos;s discuss 
+                Ready to transform your space? Reach out to us and let&apos;s discuss
                 how we can bring your vision to life.
               </p>
             </FadeIn>
@@ -169,7 +187,7 @@ export default function ContactPage() {
                         Contact Information
                       </h2>
                       <p className="text-gray-600 font-body leading-relaxed">
-                        Reach out to us through any of these channels. We typically 
+                        Reach out to us through any of these channels. We typically
                         respond within 24 hours.
                       </p>
                     </div>
@@ -185,7 +203,7 @@ export default function ContactPage() {
                               {item.label}
                             </span>
                             {item.href ? (
-                              <a 
+                              <a
                                 href={item.href}
                                 className="text-[#0a0a0a] font-body hover:text-[#ED2028] transition-colors"
                               >
@@ -255,7 +273,7 @@ export default function ContactPage() {
                           We have received your message successfully.
                         </p>
                         <p className="text-gray-500 font-body text-sm mb-6">
-                          Please check your email for confirmation.<br/>
+                          Please check your email for confirmation.<br />
                           We will contact you within 24 hours.
                         </p>
                         <button
@@ -268,6 +286,7 @@ export default function ContactPage() {
                               email: '',
                               message: '',
                             });
+                            setCountryCode('+91');
                           }}
                           className="text-[#ED2028] font-nav text-sm uppercase tracking-wider hover:underline"
                         >
@@ -303,15 +322,44 @@ export default function ContactPage() {
                               <label className="block text-xs font-nav uppercase tracking-wider text-gray-600 mb-2">
                                 Phone Number *
                               </label>
-                              <input
-                                type="tel"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required
-                                placeholder="Your phone number"
-                                className={inputClasses}
-                              />
+                              <div className="flex gap-2">
+                                <select
+                                  value={countryCode}
+                                  onChange={(e) => setCountryCode(e.target.value)}
+                                  className={`
+                                    px-3 sm:px-4 py-4 bg-[#fafafa] border border-gray-200 
+                                    font-body text-[#0a0a0a] text-sm
+                                    focus:outline-none focus:border-[#ED2028] focus:bg-white
+                                    transition-all duration-300
+                                    cursor-pointer
+                                    appearance-none
+                                    bg-no-repeat bg-right
+                                    pr-7 sm:pr-8
+                                  `}
+                                  style={{
+                                    width: '100px',
+                                    flexShrink: 0,
+                                    backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 12 12\'%3E%3Cpath fill=\'%23333\' d=\'M6 9L1 4h10z\'/%3E%3C/svg%3E")',
+                                    backgroundPosition: 'right 10px center',
+                                    backgroundSize: '10px'
+                                  }}
+                                >
+                                  {countryCodes.map((country) => (
+                                    <option key={country.code} value={country.code}>
+                                      {country.flag} {country.code}
+                                    </option>
+                                  ))}
+                                </select>
+                                <input
+                                  type="tel"
+                                  name="phone"
+                                  value={formData.phone}
+                                  onChange={handleChange}
+                                  required
+                                  placeholder="Phone number"
+                                  className={inputClasses + ' flex-1'}
+                                />
+                              </div>
                             </div>
                           </div>
 

@@ -83,7 +83,7 @@ export default function OptimizedVideo({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            videoRef.current?.play().catch(() => {});
+            videoRef.current?.play().catch(() => { });
           } else {
             videoRef.current?.pause();
           }
@@ -100,7 +100,7 @@ export default function OptimizedVideo({
   // Error fallback
   if (hasError) {
     return (
-      <div 
+      <div
         ref={containerRef}
         className={cn(
           'bg-gray-900 flex items-center justify-center',
@@ -108,24 +108,24 @@ export default function OptimizedVideo({
         )}
       >
         {poster ? (
-          <img 
-            src={poster} 
-            alt="Video poster" 
+          <img
+            src={poster}
+            alt="Video poster"
             className={`w-full h-full object-${objectFit}`}
           />
         ) : (
           <div className="text-gray-500 text-center p-8">
-            <svg 
-              className="w-16 h-16 mx-auto mb-4" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-16 h-16 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={1.5} 
-                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
               />
             </svg>
             <p>Video unavailable</p>
@@ -136,7 +136,7 @@ export default function OptimizedVideo({
   }
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={cn('relative overflow-hidden bg-gray-900', className)}
     >
@@ -148,13 +148,13 @@ export default function OptimizedVideo({
         className="absolute inset-0 bg-gray-900"
       >
         {poster && (
-          <img 
-            src={poster} 
-            alt="Video loading" 
+          <img
+            src={poster}
+            alt="Video loading"
             className={`w-full h-full object-${objectFit} opacity-50`}
           />
         )}
-        
+
         {/* Loading indicator */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-12 h-12 border-2 border-white/20 border-t-white/80 rounded-full animate-spin" />
@@ -208,15 +208,15 @@ export function VideoBackground({
         className="absolute inset-0 w-full h-full"
         objectFit="cover"
       />
-      
+
       {/* Overlay */}
       {overlay && (
-        <div 
+        <div
           className="absolute inset-0 z-10"
           style={{ backgroundColor: overlayColor }}
         />
       )}
-      
+
       {/* Content */}
       {children && (
         <div className="relative z-20">
@@ -226,6 +226,8 @@ export function VideoBackground({
     </div>
   );
 }
+
+
 
 
 

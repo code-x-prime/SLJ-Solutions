@@ -53,23 +53,23 @@ export default function AboutPage() {
   return (
     <PageTransition>
       <Navbar />
-      
+
       <main id="main-content">
         {/* Hero Section - Light & Graceful */}
         <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-white via-gray-50 to-[#ED2028]/5">
           {/* Subtle decorative elements */}
           <div className="absolute top-20 right-0 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray-100 rounded-full blur-3xl" />
-          
+
           {/* Grid pattern overlay */}
-          <div 
+          <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
               backgroundImage: 'linear-gradient(#0a0a0a 1px, transparent 1px), linear-gradient(90deg, #0a0a0a 1px, transparent 1px)',
               backgroundSize: '60px 60px'
             }}
           />
-          
+
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
             <FadeIn>
               <span className="inline-flex items-center gap-3 mb-6">
@@ -80,16 +80,16 @@ export default function AboutPage() {
                 <span className="w-12 h-px bg-[#ED2028]" />
               </span>
             </FadeIn>
-            
+
             <FadeIn delay={0.1}>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a0a0a] mb-6">
                 About <span className="text-[#ED2028]">SLJ Solutions</span>
               </h1>
             </FadeIn>
-            
+
             <FadeIn delay={0.2}>
               <p className="text-lg md:text-xl text-gray-600 font-body max-w-2xl mx-auto leading-relaxed">
-                One Solution For All Your Interior Needs - Transforming spaces 
+                One Solution For All Your Interior Needs - Transforming spaces
                 with excellence since 2009.
               </p>
             </FadeIn>
@@ -128,19 +128,19 @@ export default function AboutPage() {
                   </h2>
                   <div className="space-y-4 text-gray-600 font-body leading-relaxed">
                     <p>
-                      <strong className="text-[#0a0a0a]">SLJ Solutions</strong> was formed in July 2009. 
-                      After working in the interiors industry for many years, we decided to start 
+                      <strong className="text-[#0a0a0a]">SLJ Solutions</strong> was formed in July 2009.
+                      After working in the interiors industry for many years, we decided to start
                       our own venture to provide qualitative support for both business and home users.
                     </p>
                     <p>
-                      Our team leader previously worked as an interior architect for over 9 years 
-                      before establishing SLJ Solutions. After making a mark in the interior sector, 
-                      we expanded our bandwidth to various design-related spheres which are in huge 
+                      Our team leader previously worked as an interior architect for over 9 years
+                      before establishing SLJ Solutions. After making a mark in the interior sector,
+                      we expanded our bandwidth to various design-related spheres which are in huge
                       demand as people become more conscious about upgradation.
                     </p>
                     <p>
-                      The legacy started with the synthesis of brainstorming of entrepreneurs to 
-                      establish a successful business and make our mark in the construction market. 
+                      The legacy started with the synthesis of brainstorming of entrepreneurs to
+                      establish a successful business and make our mark in the construction market.
                       Today, we are proud to serve industry leaders like DLF, Bestech, BPTP, and many more.
                     </p>
                   </div>
@@ -171,9 +171,9 @@ export default function AboutPage() {
                     Our Vision
                   </h3>
                   <p className="text-gray-400 font-body leading-relaxed">
-                    To be successful in our business operations, we need people, product, capital, 
-                    and our customers&apos; trust. The main priority being <span className="text-[#ED2028]">Customer Trust</span>. 
-                    Our behavior, our words, our products, our character reflects our mission to 
+                    To be successful in our business operations, we need people, product, capital,
+                    and our customers&apos; trust. The main priority being <span className="text-[#ED2028]">Customer Trust</span>.
+                    Our behavior, our words, our products, our character reflects our mission to
                     deliver excellence in every project.
                   </p>
                 </div>
@@ -189,10 +189,10 @@ export default function AboutPage() {
                     Our Mission
                   </h3>
                   <p className="text-gray-400 font-body leading-relaxed">
-                    To achieve exponential growth with all our various departments by forming 
-                    strategic partnerships that allow us to develop and perform for growth 
-                    advancement via management agreements. We aim to provide <span className="text-[#ED2028]">One Solution 
-                    For All Your Interior Needs</span>.
+                    To achieve exponential growth with all our various departments by forming
+                    strategic partnerships that allow us to develop and perform for growth
+                    advancement via management agreements. We aim to provide <span className="text-[#ED2028]">One Solution
+                      For All Your Interior Needs</span>.
                   </p>
                 </div>
               </FadeIn>
@@ -277,7 +277,7 @@ export default function AboutPage() {
                   <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#0a0a0a] mb-8">
                     Why Choose Us?
                   </h2>
-                  
+
                   <div className="space-y-4">
                     {whyChooseUs.map((item, index) => (
                       <motion.div

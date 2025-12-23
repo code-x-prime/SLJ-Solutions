@@ -6,6 +6,20 @@ import Image from 'next/image';
 import { X, Send, CheckCircle } from 'lucide-react';
 import Button from './Button';
 
+// Country codes list
+const countryCodes = [
+  { code: '+91', country: 'India', flag: '🇮🇳' },
+  { code: '+1', country: 'USA/Canada', flag: '🇺🇸' },
+  { code: '+44', country: 'UK', flag: '🇬🇧' },
+  { code: '+971', country: 'UAE', flag: '🇦🇪' },
+  { code: '+966', country: 'Saudi Arabia', flag: '🇸🇦' },
+  { code: '+65', country: 'Singapore', flag: '🇸🇬' },
+  { code: '+61', country: 'Australia', flag: '🇦🇺' },
+  { code: '+92', country: 'Pakistan', flag: '🇵🇰' },
+  { code: '+880', country: 'Bangladesh', flag: '🇧🇩' },
+  { code: '+977', country: 'Nepal', flag: '🇳🇵' },
+];
+
 // ============================================
 // MODAL CONTEXT - For global modal control
 // ============================================
@@ -44,6 +58,7 @@ function EnquiryModal({ isOpen, onClose }) {
     projectType: '',
     message: '',
   });
+  const [countryCode, setCountryCode] = useState('+91'); // Default to India
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -70,6 +85,7 @@ function EnquiryModal({ isOpen, onClose }) {
           projectType: '',
           message: '',
         });
+        setCountryCode('+91');
         setIsSubmitted(false);
       }, 300);
     }
@@ -91,6 +107,9 @@ function EnquiryModal({ isOpen, onClose }) {
     console.log('📧 Enquiry Form Submitted:', formData);
 
     try {
+      // Combine country code with phone number
+      const fullPhoneNumber = `${countryCode} ${formData.phone}`.trim();
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -98,7 +117,7 @@ function EnquiryModal({ isOpen, onClose }) {
         },
         body: JSON.stringify({
           name: formData.name,
-          phone: formData.phone,
+          phone: fullPhoneNumber,
           email: formData.email,
           projectType: formData.projectType,
           message: formData.message || 'Enquiry from website modal form',
@@ -165,7 +184,7 @@ function EnquiryModal({ isOpen, onClose }) {
             </button>
 
             {/* Content */}
-            <div className="p-8 md:p-10">
+            <div className="p-8 ">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -182,21 +201,15 @@ function EnquiryModal({ isOpen, onClose }) {
                     We have received your enquiry successfully.
                   </p>
                   <p className="text-gray-500 font-body text-sm">
-                    Please check your email for confirmation. <br/>
+                    Please check your email for confirmation. <br />
                     We will contact you within 24 hours.
                   </p>
                 </motion.div>
               ) : (
                 <>
                   {/* Header with Logo */}
-                  <div className="mb-8">
-                    <Image
-                      src="/red-one.png"
-                      alt="SLJ Solutions"
-                      width={100}
-                      height={40}
-                      className="h-8 w-auto mb-4"
-                    />
+                  <div className="mb-4">
+
                     <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#0a0a0a]">
                       Get Free Quote
                     </h2>
@@ -206,7 +219,7 @@ function EnquiryModal({ isOpen, onClose }) {
                   </div>
 
                   {/* Form */}
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} className="space-y-3">
                     <div>
                       <label className="block text-xs font-nav uppercase tracking-wider text-gray-600 mb-2">
                         Full Name *
@@ -222,35 +235,64 @@ function EnquiryModal({ isOpen, onClose }) {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="sm:col-span-2">
                         <label className="block text-xs font-nav uppercase tracking-wider text-gray-600 mb-2">
                           Phone *
                         </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          required
-                          placeholder="Phone number"
-                          className={inputClasses}
-                        />
+                        <div className="flex gap-2">
+                          <select
+                            value={countryCode}
+                            onChange={(e) => setCountryCode(e.target.value)}
+                            className={`
+                              px-2 sm:px-3 py-3 bg-[#fafafa] border border-gray-200 
+                              font-body text-[#0a0a0a] text-sm
+                              focus:outline-none focus:border-[#ED2028] focus:bg-white
+                              transition-all duration-300
+                              cursor-pointer
+                              appearance-none
+                              bg-no-repeat bg-right
+                              pr-7 sm:pr-8
+                            `}
+                            style={{
+                              width: '90px',
+                              flexShrink: 0,
+                              backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 12 12\'%3E%3Cpath fill=\'%23333\' d=\'M6 9L1 4h10z\'/%3E%3C/svg%3E")',
+                              backgroundPosition: 'right 8px center',
+                              backgroundSize: '10px'
+                            }}
+                          >
+                            {countryCodes.map((country) => (
+                              <option key={country.code} value={country.code}>
+                                {country.flag} {country.code}
+                              </option>
+                            ))}
+                          </select>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                            placeholder="Phone number"
+                            className={inputClasses + ' flex-1'}
+                          />
+                        </div>
                       </div>
-                      <div>
-                        <label className="block text-xs font-nav uppercase tracking-wider text-gray-600 mb-2">
-                          Email *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          placeholder="Email address"
-                          className={inputClasses}
-                        />
-                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-nav uppercase tracking-wider text-gray-600 mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="Email address"
+                        className={inputClasses}
+                      />
                     </div>
 
                     <div>
@@ -283,7 +325,7 @@ function EnquiryModal({ isOpen, onClose }) {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        rows={4}
+                        rows={3}
                         placeholder="Tell us about your project..."
                         className={inputClasses + ' resize-none'}
                       />
@@ -297,7 +339,7 @@ function EnquiryModal({ isOpen, onClose }) {
 
                     <Button
                       type="submit"
-                      size="lg"
+                      size="md"
                       icon={isSubmitting ? null : <Send size={18} />}
                       loading={isSubmitting}
                       className="w-full justify-center font-nav mt-2"

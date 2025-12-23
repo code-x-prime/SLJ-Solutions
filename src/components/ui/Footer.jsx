@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FadeIn } from '../animations/ScrollAnimations';
 import { useModal } from './EnquiryModal';
-import { 
-  Instagram, Facebook, Linkedin, 
-  Mail, Phone, MapPin, ArrowUpRight, ArrowRight 
+import {
+  Instagram, Facebook, Linkedin,
+  Mail, Phone, MapPin, ArrowUpRight, ArrowRight
 } from 'lucide-react';
 
 const footerLinks = {
@@ -41,7 +41,7 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
-          
+
           {/* Brand Section */}
           <div className="lg:col-span-4">
             <FadeIn>
@@ -55,12 +55,12 @@ export default function Footer() {
                   className="h-14 w-auto"
                 />
               </Link>
-              
+
               <p className="text-gray-400 font-body text-sm leading-relaxed max-w-sm mb-4">
                 <strong className="text-white">One Solution For All Your Needs</strong>
               </p>
               <p className="text-gray-400 font-body text-sm leading-relaxed max-w-sm mb-8">
-                Award-winning interior design company since 2009. Specializing in 
+                Award-winning interior design company since 2009. Specializing in
                 turnkey construction, office interiors, modular solutions & more.
               </p>
 
@@ -99,9 +99,9 @@ export default function Footer() {
                         className="text-gray-400 font-body text-sm hover:text-[#ED2028] transition-colors duration-300 inline-flex items-center gap-1 group"
                       >
                         {link.name}
-                        <ArrowUpRight 
-                          size={12} 
-                          className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" 
+                        <ArrowUpRight
+                          size={12}
+                          className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
                         />
                       </Link>
                     </li>
@@ -124,9 +124,9 @@ export default function Footer() {
                         className="text-gray-400 font-body text-sm hover:text-[#ED2028] transition-colors duration-300 inline-flex items-center gap-1 group"
                       >
                         {link.name}
-                        <ArrowUpRight 
-                          size={12} 
-                          className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" 
+                        <ArrowUpRight
+                          size={12}
+                          className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
                         />
                       </Link>
                     </li>
@@ -142,9 +142,9 @@ export default function Footer() {
               <h4 className="font-nav text-xs uppercase tracking-[0.15em] text-white mb-5">
                 Contact Us
               </h4>
-              
+
               <div className="space-y-4 mb-8">
-                <a 
+                <a
                   href="tel:+919953551248"
                   className="flex items-start gap-3 text-gray-400 hover:text-[#ED2028] transition-colors group"
                 >
@@ -154,15 +154,15 @@ export default function Footer() {
                     <span className="block">+91 88600 36536</span>
                   </div>
                 </a>
-                
-                <a 
+
+                <a
                   href="mailto:sales@sljsolutions.com"
                   className="flex items-start gap-3 text-gray-400 hover:text-[#ED2028] transition-colors group"
                 >
                   <Mail size={16} className="mt-0.5 shrink-0" />
                   <span className="font-body text-sm">sales@sljsolutions.com</span>
                 </a>
-                
+
                 <div className="flex items-start gap-3 text-gray-400">
                   <MapPin size={16} className="mt-0.5 shrink-0" />
                   <span className="font-body text-sm">
@@ -195,7 +195,7 @@ export default function Footer() {
             <p className="text-gray-500 font-body text-xs">
               © {currentYear} SLJ Solutions. All rights reserved.
             </p>
-            
+
             <p className="text-gray-600 font-body text-xs">
               Interior Design Excellence Since 2009
             </p>

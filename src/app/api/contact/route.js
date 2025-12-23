@@ -6,12 +6,17 @@ export async function POST(request) {
     const { name, email, phone, message, projectType, subject } = await request.json();
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email) {
       return NextResponse.json(
-        { error: 'Name, email, and message are required' },
+        { error: 'Name and email are required' },
         { status: 400 }
       );
     }
+
+    // Set default message if not provided
+    const finalMessage = message || projectType
+      ? `Enquiry for ${projectType || 'General Inquiry'}`
+      : 'Enquiry from website form';
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -23,7 +28,7 @@ export async function POST(request) {
     }
 
     const adminEmail = process.env.NEXT_PUBLIC_TO_EMAIL || process.env.NEXT_PUBLIC_FROM_EMAIL || 'codeshorts007@gmail.com';
-    const formData = { name, email, phone, message, projectType, subject };
+    const formData = { name, email, phone, message: finalMessage, projectType, subject };
 
     // Send email to admin with inquiry details
     const adminEmailHtml = getAdminEmailTemplate(formData);
@@ -36,7 +41,7 @@ Phone: ${phone || 'Not provided'}
 Project Type: ${projectType || 'Not specified'}
 
 Message:
-${message}
+${finalMessage}
 
 ---
 Received on: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
@@ -76,8 +81,6 @@ Phone: +91 99535 51248
       html: userEmailHtml,
     });
 
-    // Also log to console for debugging
-    console.log('📧 Enquiry submitted:', { name, email, phone, projectType, message });
 
     return NextResponse.json({
       success: true,
@@ -97,6 +100,8 @@ Phone: +91 99535 51248
     );
   }
 }
+
+
 
 
 

@@ -32,17 +32,17 @@ const nextConfig = {
   // ============================================
   // PERFORMANCE OPTIMIZATIONS
   // ============================================
-  
+
   // Enable React Strict Mode for better development
   reactStrictMode: true,
-  
+
   // Compress responses
   compress: true,
-  
+
   // Static Site Generation
   // Uncomment the line below for full static export (SSG)
   // output: 'export',
-  
+
   // Trailing slashes for cleaner URLs
   trailingSlash: false,
 
