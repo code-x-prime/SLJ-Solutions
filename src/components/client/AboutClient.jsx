@@ -6,6 +6,8 @@ import PageTransition from '@/components/PageTransition';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import Button from '@/components/ui/Button';
+import ScrollProgress from '@/components/ui/ScrollProgress';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 import { useModal } from '@/components/ui/EnquiryModal';
 import { FadeIn, Counter } from '@/components/animations/ScrollAnimations';
 import { ArrowRight, Award, CheckCircle, Shield, Heart, Sparkles, Target, Gem } from 'lucide-react';
@@ -53,7 +55,10 @@ export default function AboutClient() {
     const { openModal } = useModal();
 
     return (
-        <PageTransition>
+        <PageTransition showLoader={true}>
+            {/* Scroll Progress Indicator */}
+            <ScrollProgress />
+
             <Navbar />
 
             <main id="main-content">
@@ -232,6 +237,9 @@ export default function AboutClient() {
             </main>
 
             <Footer />
+
+            {/* Floating Elements */}
+            <ScrollToTop />
         </PageTransition>
     );
 }

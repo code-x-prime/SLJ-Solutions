@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-6 right-6 z-50 flex items-center justify-center
+            className="fixed bottom-6 right-4 md:right-6 z-40 flex items-center justify-center
                  w-14 h-14 md:w-16 md:h-16
                  bg-[#25D366] hover:bg-[#20BA5A]
                  text-white rounded-full shadow-2xl

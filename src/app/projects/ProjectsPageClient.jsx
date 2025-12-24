@@ -8,6 +8,8 @@ import PageTransition from '@/components/PageTransition';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import Button from '@/components/ui/Button';
+import ScrollProgress from '@/components/ui/ScrollProgress';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 import { FadeIn } from '@/components/animations/ScrollAnimations';
 import { ArrowRight, X, MapPin, Building2, Home, Maximize2 } from 'lucide-react';
 
@@ -97,7 +99,10 @@ export default function ProjectsPageClient() {
         : projects.filter(p => p.category === activeCategory);
 
     return (
-        <PageTransition>
+        <PageTransition showLoader={true}>
+            {/* Scroll Progress Indicator */}
+            <ScrollProgress />
+
             <Navbar />
 
             <main id="main-content">
@@ -318,6 +323,9 @@ export default function ProjectsPageClient() {
             </AnimatePresence>
 
             <Footer />
+
+            {/* Floating Elements */}
+            <ScrollToTop />
         </PageTransition>
     );
 }

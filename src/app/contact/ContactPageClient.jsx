@@ -6,6 +6,8 @@ import PageTransition from '@/components/PageTransition';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import Button from '@/components/ui/Button';
+import ScrollProgress from '@/components/ui/ScrollProgress';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 import { FadeIn } from '@/components/animations/ScrollAnimations';
 import {
     Send, Mail, Phone, MapPin, Clock, CheckCircle,
@@ -128,7 +130,10 @@ export default function ContactPageClient() {
   `;
 
     return (
-        <PageTransition>
+        <PageTransition showLoader={true}>
+            {/* Scroll Progress Indicator */}
+            <ScrollProgress />
+
             <Navbar />
 
             <main id="main-content">
@@ -442,6 +447,9 @@ export default function ContactPageClient() {
                 onClose={() => setIsBrochureModalOpen(false)}
                 brochureUrl="/brochure.pdf"
             />
+
+            {/* Floating Elements */}
+            <ScrollToTop />
         </PageTransition>
     );
 }
