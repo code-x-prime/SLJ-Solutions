@@ -14,15 +14,7 @@ import { ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
 import { FaTools, FaBuilding, FaHome, FaTree } from 'react-icons/fa';
 import { MdKitchen } from 'react-icons/md';
 
-// React Icons for Detailed Office Services
-import {
-  FaPaintRoller, FaHardHat, FaNetworkWired, FaVideo, FaShieldAlt,
-  FaSnowflake, FaBolt, FaWater, FaFire, FaBatteryFull,
-  FaServer, FaFingerprint, FaWind, FaClipboardCheck, FaDesktop,
-  FaLightbulb, FaChair, FaCouch, FaBorderAll, FaVolumeUp, FaLayerGroup
-} from 'react-icons/fa';
-import { MdMeetingRoom, MdGridOn } from 'react-icons/md';
-import { BsGrid3X3Gap } from 'react-icons/bs';
+// SVG icons mapping for Detailed Office Services
 
 /**
  * =============================================
@@ -84,28 +76,28 @@ const coreServices = [
  * =============================================
  */
 const detailedServices = [
-  { id: 1, icon: FaPaintRoller, name: 'Interiors' },
-  { id: 2, icon: FaHardHat, name: 'Civil' },
-  { id: 3, icon: FaNetworkWired, name: 'Networking' },
-  { id: 4, icon: FaVideo, name: 'Audio-Video' },
-  { id: 5, icon: FaShieldAlt, name: 'Security Systems' },
-  { id: 6, icon: FaSnowflake, name: 'Air Conditioning' },
-  { id: 7, icon: FaBolt, name: 'Electricals' },
-  { id: 8, icon: FaWater, name: 'Plumbing' },
-  { id: 9, icon: FaFire, name: 'Fire-Fighting' },
-  { id: 10, icon: FaBatteryFull, name: 'UPS' },
-  { id: 11, icon: FaServer, name: 'PAC' },
-  { id: 12, icon: FaFingerprint, name: 'Access Control' },
-  { id: 13, icon: FaWind, name: 'HVAC' },
-  { id: 14, icon: FaClipboardCheck, name: 'FAPA' },
-  { id: 15, icon: FaDesktop, name: 'BMS' },
-  { id: 16, icon: FaLightbulb, name: 'Lighting Control' },
-  { id: 17, icon: BsGrid3X3Gap, name: 'Work Stations' },
-  { id: 18, icon: FaChair, name: 'Chairs' },
-  { id: 19, icon: FaCouch, name: 'Soft Seating' },
-  { id: 20, icon: MdMeetingRoom, name: 'De-Mountable Partitions' },
-  { id: 21, icon: FaVolumeUp, name: 'Acoustic Panels' },
-  { id: 22, icon: FaLayerGroup, name: 'Flooring' },
+  { id: 1, svg: '/interiors.svg', name: 'Interiors' },
+  { id: 2, svg: '/civil.svg', name: 'Civil' },
+  { id: 3, svg: '/networking.svg', name: 'Networking' },
+  { id: 4, svg: '/audio-video.svg', name: 'Audio-Video' },
+  { id: 5, svg: '/security-systems.svg', name: 'Security Systems' },
+  { id: 6, svg: '/air-conditioning.svg', name: 'Air Conditioning' },
+  { id: 7, svg: '/electricals.svg', name: 'Electricals' },
+  { id: 8, svg: '/plumbing.svg', name: 'Plumbing' },
+  { id: 9, svg: '/fire-fighting.svg', name: 'Fire-Fighting' },
+  { id: 10, svg: '/ups.svg', name: 'UPS' },
+  { id: 11, svg: '/pac.svg', name: 'PAC' },
+  { id: 12, svg: '/access-control.svg', name: 'Access Control' },
+  { id: 13, svg: '/hvac.svg', name: 'HVAC' },
+  { id: 14, svg: '/fapa.svg', name: 'FAPA' },
+  { id: 15, svg: '/bms.svg', name: 'BMS' },
+  { id: 16, svg: '/lighting-control.svg', name: 'Lighting Control' },
+  { id: 17, svg: '/work-stations.svg', name: 'Work Stations' },
+  { id: 18, svg: '/chairs.svg', name: 'Chairs' },
+  { id: 19, svg: '/soft-seating.svg', name: 'Soft Seating' },
+  { id: 20, svg: '/de-mountable-partitions.svg', name: 'De-Mountable Partitions' },
+  { id: 21, svg: '/acoustic-panels.svg', name: 'Acoustic Panels' },
+  { id: 22, svg: '/flooring.svg', name: 'Flooring' },
 ];
 
 /**
@@ -227,16 +219,28 @@ function ServiceGridItem({ service }) {
         transition-all duration-300 cursor-pointer
       "
     >
-      {/* Icon */}
+      {/* Icon with SVG */}
       <div
         className="
           w-12 h-12 flex items-center justify-center shrink-0
-          bg-[#ED2028]/10 text-[#ED2028]
-          group-hover:bg-[#ED2028] group-hover:text-white
+          bg-[#ED2028]/10
+          group-hover:bg-[#ED2028]
           transition-all duration-300
+          relative
         "
       >
-        <service.icon size={22} />
+        <Image
+          src={service.svg}
+          alt={service.name}
+          width={30}
+          height={30}
+          className="
+            w-8 h-8
+            transition-all duration-300
+            group-hover:brightness-0 group-hover:invert
+          "
+          style={{ objectFit: 'contain' }}
+        />
       </div>
 
       {/* Service Name */}

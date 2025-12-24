@@ -1,5 +1,6 @@
 import "./globals.css";
 import { ModalProvider } from '@/components/ui/EnquiryModal';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 // ============================================
 // SEO METADATA
@@ -153,7 +154,8 @@ export default function RootLayout({ children }) {
           </a>
 
           <ModalProvider>
-        {children}
+            {children}
+            <WhatsAppButton />
           </ModalProvider>
         </div>
       </body>
