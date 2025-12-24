@@ -16,10 +16,10 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-white relative overflow-hidden">
+    <section id="about" className="py-10 md:py-16 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#fafafa] to-transparent" />
-      
+
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Column */}
@@ -34,11 +34,11 @@ export default function AboutSection() {
                   className="object-cover"
                 />
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -bottom-6 -right-6 w-40 h-40 border-2 border-[#ED2028]/20 hidden lg:block" />
               <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#ED2028] hidden lg:block" />
-              
+
               {/* Experience badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -69,13 +69,13 @@ export default function AboutSection() {
 
               <div className="space-y-4 text-gray-600 font-body leading-relaxed">
                 <p>
-                  <strong className="text-[#0a0a0a]">SLJ Solutions</strong> was established in 2009 
-                  with a vision to provide complete interior design solutions. With over 15 years 
+                  <strong className="text-[#0a0a0a]">SLJ Solutions</strong> was established in 2009
+                  with a vision to provide complete interior design solutions. With over 15 years
                   of experience in the industry, we have successfully completed 500+ projects.
                 </p>
                 <p>
-                  Our expertise spans turnkey civil construction, office interiors, modular kitchens, 
-                  IKEA furnishing, and more. We are trusted by industry leaders like DLF, Bestech, 
+                  Our expertise spans turnkey civil construction, office interiors, modular kitchens,
+                  IKEA furnishing, and more. We are trusted by industry leaders like DLF, Bestech,
                   BPTP, and The Lodhi.
                 </p>
               </div>

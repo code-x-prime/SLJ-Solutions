@@ -61,7 +61,7 @@ export default function ServicesSection() {
   const { openModal } = useModal();
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-[#fafafa] relative overflow-hidden">
+    <section id="services" className="py-10 md:py-16 bg-[#fafafa] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#ED2028]/5 to-transparent pointer-events-none" />
 

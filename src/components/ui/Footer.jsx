@@ -1,13 +1,15 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FadeIn } from '../animations/ScrollAnimations';
 import { useModal } from './EnquiryModal';
+import BrochureDownloadModal from './BrochureDownloadModal';
 import {
   Instagram, Facebook, Linkedin,
-  Mail, Phone, MapPin, ArrowUpRight, ArrowRight
+  Mail, Phone, MapPin, ArrowUpRight, ArrowRight, Download
 } from 'lucide-react';
 
 const footerLinks = {
@@ -35,6 +37,7 @@ const socialLinks = [
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { openModal } = useModal();
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
 
   return (
     <footer className="bg-[#0a0a0a] text-white">
@@ -173,20 +176,30 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Get Quote Button */}
-              <button
-                onClick={openModal}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#ED2028] text-white 
-                         font-nav text-sm uppercase tracking-wider
-                         hover:bg-[#c41a20] transition-colors"
-              >
-                Get Free Quote
-                <ArrowRight size={16} />
-              </button>
+              {/* Action Buttons */}
+              <div className="flex  gap-3">
+
+                <button
+                  onClick={() => setIsBrochureModalOpen(true)}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-2   
+                           font-nav text-sm uppercase tracking-wider
+                           border-[#ED2028] text-[#ED2028] transition-colors"
+                >
+                  <Download size={16} />
+                  Download Brochure
+                </button>
+              </div>
             </FadeIn>
           </div>
         </div>
       </div>
+
+      {/* Brochure Download Modal */}
+      <BrochureDownloadModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
+        brochureUrl="/brochure.pdf"
+      />
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">

@@ -105,7 +105,7 @@ const clients = [
 
 export default function ClientsSection() {
   return (
-    <section id="clients" className="py-20 md:py-28 bg-white relative overflow-hidden">
+    <section id="clients" className="py-10 md:py-16 bg-white relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{

@@ -47,9 +47,14 @@ ${finalMessage}
 Received on: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
     `;
 
+    // Customize subject based on request type
+    const emailSubject = subject === 'Brochure Download Request'
+      ? `📥 Brochure Downloaded by ${name} - SLJ Solutions`
+      : `🏠 New Enquiry from ${name} - SLJ Solutions`;
+
     await sendEmail({
       to: adminEmail,
-      subject: `🏠 New Enquiry from ${name} - SLJ Solutions`,
+      subject: emailSubject,
       text: adminEmailText,
       html: adminEmailHtml,
     });
