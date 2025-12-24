@@ -10,26 +10,33 @@ import { ArrowRight, ChevronLeft, ChevronRight, Volume2, VolumeX } from 'lucide-
 // Video slides with SLJ Solutions content
 const heroSlides = [
   {
-    video: 'https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4',
-    poster: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=80',
+    video: '/banner/banner1.jpg',
+    poster: '/banner/banner1.jpg',
     headline: ['Define', 'Modern', 'Luxury'],
     highlightIndex: 2,
     subtitle: 'Award-winning design excellence',
   },
   {
-    video: 'https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4',
-    poster: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2000&q=80',
+    video: '/banner/banner2.jpg',
+    poster: '/banner/banner2.jpg',
     headline: ['One', 'Solution', 'For All'],
     highlightIndex: 1,
     subtitle: 'Your trusted interior design partner since 2009',
   },
   {
-    video: 'https://videos.pexels.com/video-files/3773486/3773486-uhd_2560_1440_30fps.mp4',
-    poster: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=80',
+    video: '/banner/banner3.jpg',
+    poster: '/banner/banner3.jpg',
     headline: ['Transform', 'Your', 'Space'],
     highlightIndex: 0,
     subtitle: 'Residential & commercial interior experts',
   },
+  {
+    video: '/banner/banner4.jpg',
+    poster: '/banner/banner4.jpg',
+    headline: ['Transform', 'Your', 'Space'],
+    highlightIndex: 0,
+    subtitle: 'Residential & commercial interior experts',
+  }
 ];
 
 export default function HeroSection() {
@@ -41,16 +48,16 @@ export default function HeroSection() {
   const videoRefs = useRef([]);
   const progressInterval = useRef(null);
   const autoPlayTimeout = useRef(null);
-  
+
   const SLIDE_DURATION = 8000;
 
   const goToSlide = useCallback((index) => {
     if (isTransitioning || index === currentSlide) return;
-    
+
     setIsTransitioning(true);
     setProgress(0);
     setCurrentSlide(index);
-    
+
     setTimeout(() => {
       setIsTransitioning(false);
     }, 1000);
@@ -87,7 +94,7 @@ export default function HeroSection() {
       if (video) {
         if (index === currentSlide) {
           video.currentTime = 0;
-          video.play().catch(() => {});
+          video.play().catch(() => { });
         } else {
           video.pause();
         }
@@ -116,13 +123,13 @@ export default function HeroSection() {
   };
 
   const wordVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 60,
       rotateX: -60,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       rotateX: 0,
       transition: {
@@ -131,8 +138,8 @@ export default function HeroSection() {
         stiffness: 120,
       },
     },
-    exit: { 
-      opacity: 0, 
+    exit: {
+      opacity: 0,
       y: -30,
       transition: {
         duration: 0.25,
@@ -142,13 +149,13 @@ export default function HeroSection() {
 
   const subtitleVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { delay: 0.6, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
     },
-    exit: { 
-      opacity: 0, 
+    exit: {
+      opacity: 0,
       y: -15,
       transition: { duration: 0.25 },
     },
@@ -176,12 +183,12 @@ export default function HeroSection() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             />
-            
+
             {/* Overlays */}
             <div className="absolute inset-0 bg-black/45" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
-            
+
             {/* Film grain */}
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-overlay"
               style={{
@@ -212,11 +219,10 @@ export default function HeroSection() {
                     <motion.span
                       key={index}
                       variants={wordVariants}
-                      className={`block text-[clamp(2.75rem,8vw,6rem)] font-bold ${
-                        index === heroSlides[currentSlide].highlightIndex
-                          ? 'text-[#ED2028]'
-                          : 'text-white'
-                      }`}
+                      className={`block text-[clamp(2.75rem,8vw,6rem)] font-bold ${index === heroSlides[currentSlide].highlightIndex
+                        ? 'text-[#ED2028]'
+                        : 'text-white'
+                        }`}
                       style={{ transformStyle: 'preserve-3d' }}
                     >
                       {word}
@@ -248,7 +254,7 @@ export default function HeroSection() {
                   >
                     Start Your Project
                   </Button>
-                  
+
                   {/* View Portfolio - Links to Projects page */}
                   <Link href="/projects">
                     <Button
@@ -280,10 +286,10 @@ export default function HeroSection() {
             <span className="absolute inset-0 rounded-full border border-white/30 
                            group-hover:border-[#ED2028] group-hover:bg-[#ED2028]/10
                            transition-all duration-400" />
-            <ChevronLeft 
+            <ChevronLeft
               className="relative z-10 w-5 h-5 md:w-6 md:h-6 text-white 
                         group-hover:text-[#ED2028] group-hover:-translate-x-0.5
-                        transition-all duration-300" 
+                        transition-all duration-300"
               strokeWidth={1.5}
             />
           </motion.button>
@@ -299,10 +305,10 @@ export default function HeroSection() {
             <span className="absolute inset-0 rounded-full border border-white/30 
                            group-hover:border-[#ED2028] group-hover:bg-[#ED2028]/10
                            transition-all duration-400" />
-            <ChevronRight 
+            <ChevronRight
               className="relative z-10 w-5 h-5 md:w-6 md:h-6 text-white 
                         group-hover:text-[#ED2028] group-hover:translate-x-0.5
-                        transition-all duration-300" 
+                        transition-all duration-300"
               strokeWidth={1.5}
             />
           </motion.button>
@@ -353,11 +359,10 @@ export default function HeroSection() {
                   onClick={() => goToSlide(index)}
                   className="group relative py-3"
                 >
-                  <span className={`block w-8 lg:w-12 h-[2px] transition-all duration-400 ${
-                    currentSlide === index 
-                      ? 'bg-[#ED2028]' 
-                      : 'bg-white/30 group-hover:bg-white/50'
-                  }`} />
+                  <span className={`block w-8 lg:w-12 h-[2px] transition-all duration-400 ${currentSlide === index
+                    ? 'bg-[#ED2028]'
+                    : 'bg-white/30 group-hover:bg-white/50'
+                    }`} />
                 </button>
               ))}
             </motion.div>
