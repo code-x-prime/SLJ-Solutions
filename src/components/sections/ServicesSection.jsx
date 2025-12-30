@@ -6,51 +6,40 @@ import { FadeIn, StaggerContainer, StaggerItem } from '../animations/ScrollAnima
 import Button from '../ui/Button';
 import { useModal } from '../ui/EnquiryModal';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
-// React Icons - Reliable and well-tested
-import { FaTools, FaBuilding, FaHome, FaTree } from 'react-icons/fa';
-import { MdKitchen } from 'react-icons/md';
-
-/**
- * Core Services - EXACTLY 5 as specified
- * 1. Turnkey Projects – Civil & Interior Works (including MEP Design & Build)
- * 2. Office Interiors – Commercial & Corporate Spaces
- * 3. Residential Interiors – Flats & Apartments
- * 4. Modular Kitchens, Wardrobes & Customized Furnishings
- * 5. Terrace Gardens & Outdoor Landscaping
- */
 const services = [
   {
     id: 1,
-    icon: FaTools,
+    icon: '/services/turnkey-projects.svg',
     title: 'Turnkey Projects',
     subtitle: 'Civil & Interior Works',
     description: 'Complete turnkey solutions including MEP Design & Build. One-stop partner for construction and interior projects.',
   },
   {
     id: 2,
-    icon: FaBuilding,
+    icon: '/services/office-interiors.svg',
     title: 'Office Interiors',
     subtitle: 'Commercial & Corporate',
     description: 'Professional office interiors designed for productivity. Inspiring commercial and corporate workspaces.',
   },
   {
     id: 3,
-    icon: FaHome,
+    icon: '/services/residential-interiors.svg',
     title: 'Residential Interiors',
     subtitle: 'Flats & Apartments',
     description: 'Transform your home into a beautiful living space with personalized interior design solutions.',
   },
   {
     id: 4,
-    icon: MdKitchen,
+    icon: '/services/modular-kitchens.svg',
     title: 'Modular Kitchens & Wardrobes',
     subtitle: 'Customized Furnishings',
     description: 'Premium modular kitchens, wardrobes, and customized furnishings with smart storage solutions.',
   },
   {
     id: 5,
-    icon: FaTree,
+    icon: '/services/terrace-gardens.svg',
     title: 'Terrace Gardens',
     subtitle: 'Outdoor Landscaping',
     description: 'Beautiful terrace gardens and outdoor landscaping. Bring nature into your urban space.',
@@ -111,12 +100,20 @@ export default function ServicesSection() {
                   <div
                     className="
                       w-14 h-14 flex items-center justify-center 
-                      bg-[#ED2028]/10 text-[#ED2028] mb-5
-                      group-hover:bg-[#ED2028] group-hover:text-white
+                      bg-[#ED2028]/10
+                      mb-5
+                      group-hover:bg-[#ED2028]
                       transition-all duration-400
+                      rounded-lg
                     "
                   >
-                    <service.icon size={28} />
+                    <Image
+                       src={service.icon}
+                       alt={service.title}
+                       width={32}
+                       height={32}
+                       className="w-10 h-10 text-[#ED2028] group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                    />
                   </div>
 
                   {/* Title & Subtitle */}

@@ -12,21 +12,11 @@ import { useModal } from '@/components/ui/EnquiryModal';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations/ScrollAnimations';
 import { ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
 
-// React Icons for Core Work
-import { FaTools, FaBuilding, FaHome, FaTree } from 'react-icons/fa';
-import { MdKitchen } from 'react-icons/md';
 
-// SVG icons mapping for Detailed Office Services
-
-/**
- * =============================================
- * SECTION 1: CORE WORK - 5 Premium Services
- * =============================================
- */
 const coreServices = [
     {
         id: 1,
-        icon: FaTools,
+        icon: '/services/turnkey-projects.svg',
         title: 'Turnkey Projects',
         subtitle: 'Civil & Interior Works',
         description: 'Complete turnkey solutions including MEP Design & Build. From concept to completion, we handle everything as your one-stop partner for construction and interior projects.',
@@ -35,7 +25,7 @@ const coreServices = [
     },
     {
         id: 2,
-        icon: FaBuilding,
+        icon: '/services/office-interiors.svg',
         title: 'Office Interiors',
         subtitle: 'Commercial & Corporate Spaces',
         description: 'Professional office interiors designed for productivity and brand identity. We create inspiring commercial and corporate workspaces that reflect your business values.',
@@ -44,7 +34,7 @@ const coreServices = [
     },
     {
         id: 3,
-        icon: FaHome,
+        icon: '/services/residential-interiors.svg',
         title: 'Residential Interiors',
         subtitle: 'Flats & Apartments',
         description: 'Transform your home into a beautiful living space. Expert residential interior design services for flats, apartments, and independent houses with personalized styling.',
@@ -53,7 +43,7 @@ const coreServices = [
     },
     {
         id: 4,
-        icon: MdKitchen,
+        icon: '/services/modular-kitchens.svg',
         title: 'Modular Kitchens & Wardrobes',
         subtitle: 'Customized Furnishings',
         description: 'Premium modular kitchens, wardrobes, and customized furnishings crafted to perfection. Modern designs with smart storage solutions tailored to your lifestyle.',
@@ -62,7 +52,7 @@ const coreServices = [
     },
     {
         id: 5,
-        icon: FaTree,
+        icon: '/services/terrace-gardens.svg',
         title: 'Terrace Gardens & Landscaping',
         subtitle: 'Outdoor Landscaping',
         description: 'Beautiful terrace gardens and outdoor landscaping solutions. Bring nature into your urban space with vertical gardens, balcony upgrades, and landscape design.',
@@ -146,12 +136,19 @@ function CoreWorkCard({ service, index }) {
                     <div
                         className="
               w-14 h-14 flex items-center justify-center shrink-0
-              bg-[#ED2028]/10 text-[#ED2028]
-              group-hover:bg-[#ED2028] group-hover:text-white
+              bg-[#ED2028]/10 
+              group-hover:bg-[#ED2028] 
               transition-all duration-400
+              rounded-lg
             "
                     >
-                        <service.icon size={28} />
+                        <Image 
+                            src={service.icon} 
+                            alt={service.title} 
+                            width={32} 
+                            height={32} 
+                            className="w-10 h-10 text-[#ED2028] group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                        />
                     </div>
                     <div>
                         <h3
