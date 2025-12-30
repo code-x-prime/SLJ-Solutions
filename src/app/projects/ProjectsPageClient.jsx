@@ -107,7 +107,7 @@ export default function ProjectsPageClient() {
 
             <main id="main-content">
                 {/* Hero Section */}
-                <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24">
+                <section className="relative min-h-[65vh] flex items-center justify-center overflow-hidden pt-24">
                     <div className="absolute inset-0 z-0">
                          <Image
                              src="/services/project.jpg"

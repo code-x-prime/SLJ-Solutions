@@ -139,14 +139,14 @@ export default function ContactPageClient() {
 
             <main id="main-content">
                 {/* Hero Section - Light & Graceful */}
-                <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24">
+                <section className="relative min-h-[65vh] flex items-center justify-center overflow-hidden pt-24">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <Image
                             src="/services/contact.jpg"
                             alt="Contact Banner"
                             fill
-                            className="object-cover"
+                            className="object-cover object-top"
                             priority
                         />
                         <div className="absolute inset-0 bg-black/60" />

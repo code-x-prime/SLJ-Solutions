@@ -267,7 +267,7 @@ export default function ServicesPageClient() {
 
             <main id="main-content">
                 {/* Hero Section - Light & Graceful */}
-                <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24">
+                <section className="relative min-h-[65vh] flex items-center justify-center overflow-hidden pt-24">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <Image
