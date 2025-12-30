@@ -17,7 +17,7 @@ const coreServices = [
     {
         id: 1,
         icon: '/services/turnkey-projects.svg',
-        title: 'CONTRACTING- END TO END SOLUTION',
+        title: 'Contracting - End to End Solution',
         subtitle: 'Civil & Interior Works',
         description: 'Complete turnkey solutions including MEP Design & Build. From concept to completion, we handle everything as your one-stop partner for construction and interior projects.',
         features: ['Complete project management', 'MEP Design & Build', 'Civil construction', 'Interior fitout'],
@@ -44,7 +44,7 @@ const coreServices = [
     {
         id: 4,
         icon: '/services/modular-kitchens.svg',
-        title: 'SUPPLY AND MANUFACTURING OF INTERIOR ITEMS',
+        title: 'Supply and Manufacturing of Interior Items',
         subtitle: 'Customized Furnishings',
         description: 'Premium modular kitchens, wardrobes, and customized furnishings crafted to perfection. Modern designs with smart storage solutions tailored to your lifestyle.',
         features: ['Modular kitchens', 'Custom wardrobes', 'Vanity units', 'Smart storage'],
