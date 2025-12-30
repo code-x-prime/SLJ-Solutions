@@ -12,7 +12,7 @@ const services = [
   {
     id: 1,
     icon: '/services/turnkey-projects.svg',
-    title: 'Contracting - End to End Solution',
+    title: 'Turnkey Projects',
     subtitle: 'Civil & Interior Works',
     description: 'Complete turnkey solutions including MEP Design & Build. One-stop partner for construction and interior projects.',
   },
@@ -33,7 +33,7 @@ const services = [
   {
     id: 4,
     icon: '/services/modular-kitchens.svg',
-    title: 'Supply and Manufacturing of Interior Items',
+    title: 'Modular Kitchens & Wardrobes',
     subtitle: 'Customized Furnishings',
     description: 'Premium modular kitchens, wardrobes, and customized furnishings with smart storage solutions.',
   },
@@ -175,6 +175,31 @@ export default function ServicesSection() {
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        {/* Essential Additional Services */}
+        <FadeIn delay={0.2}>
+          <div className="mt-12 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+             <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+                <div className="flex items-center gap-4 group">
+                   <div className="w-12 h-12 rounded-full bg-[#ED2028]/10 flex items-center justify-center text-[#ED2028] font-bold text-xl group-hover:bg-[#ED2028] group-hover:text-white transition-colors">
+                      01
+                   </div>
+                   <h3 className="font-heading text-lg font-semibold text-gray-800 uppercase tracking-wide">
+                      CONTRACTING- END TO END SOLUTION
+                   </h3>
+                </div>
+                <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+                <div className="flex items-center gap-4 group">
+                   <div className="w-12 h-12 rounded-full bg-[#ED2028]/10 flex items-center justify-center text-[#ED2028] font-bold text-xl group-hover:bg-[#ED2028] group-hover:text-white transition-colors">
+                      02
+                   </div>
+                   <h3 className="font-heading text-lg font-semibold text-gray-800 uppercase tracking-wide">
+                      SUPPLY AND MANUFACTURING OF INTERIOR ITEMS
+                   </h3>
+                </div>
+             </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

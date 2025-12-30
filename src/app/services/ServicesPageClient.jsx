@@ -17,7 +17,7 @@ const coreServices = [
     {
         id: 1,
         icon: '/services/turnkey-projects.svg',
-        title: 'Contracting - End to End Solution',
+        title: 'Turnkey Projects',
         subtitle: 'Civil & Interior Works',
         description: 'Complete turnkey solutions including MEP Design & Build. From concept to completion, we handle everything as your one-stop partner for construction and interior projects.',
         features: ['Complete project management', 'MEP Design & Build', 'Civil construction', 'Interior fitout'],
@@ -44,7 +44,7 @@ const coreServices = [
     {
         id: 4,
         icon: '/services/modular-kitchens.svg',
-        title: 'Supply and Manufacturing of Interior Items',
+        title: 'Modular Kitchens & Wardrobes',
         subtitle: 'Customized Furnishings',
         description: 'Premium modular kitchens, wardrobes, and customized furnishings crafted to perfection. Modern designs with smart storage solutions tailored to your lifestyle.',
         features: ['Modular kitchens', 'Custom wardrobes', 'Vanity units', 'Smart storage'],
@@ -374,21 +374,29 @@ export default function ServicesPageClient() {
                             ))}
                         </StaggerContainer>
 
-                        {/* CTA Below Grid */}
-                        <FadeIn delay={0.3}>
-                            <div className="text-center mt-12">
-                                <p className="text-gray-600 font-body mb-6">
-                                    Need a custom solution for your project?
-                                </p>
-                                <Button
-                                    onClick={openModal}
-                                    size="lg"
-                                    icon={<ArrowRight size={18} />}
-                                    className="font-nav"
-                                >
-                                    Get Free Consultation
-                                </Button>
-                            </div>
+                        {/* Essential Additional Services */}
+                        <FadeIn delay={0.2}>
+                          <div className="mt-12 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                             <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+                                <div className="flex items-center gap-4 group">
+                                   <div className="w-12 h-12 rounded-full bg-[#ED2028]/10 flex items-center justify-center text-[#ED2028] font-bold text-xl group-hover:bg-[#ED2028] group-hover:text-white transition-colors">
+                                      01
+                                   </div>
+                                   <h3 className="font-heading text-lg font-semibold text-gray-800 uppercase tracking-wide">
+                                      CONTRACTING- END TO END SOLUTION
+                                   </h3>
+                                </div>
+                                <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+                                <div className="flex items-center gap-4 group">
+                                   <div className="w-12 h-12 rounded-full bg-[#ED2028]/10 flex items-center justify-center text-[#ED2028] font-bold text-xl group-hover:bg-[#ED2028] group-hover:text-white transition-colors">
+                                      02
+                                   </div>
+                                   <h3 className="font-heading text-lg font-semibold text-gray-800 uppercase tracking-wide">
+                                      SUPPLY AND MANUFACTURING OF INTERIOR ITEMS
+                                   </h3>
+                                </div>
+                             </div>
+                          </div>
                         </FadeIn>
                     </div>
                 </section>
