@@ -12,7 +12,7 @@ const services = [
   {
     id: 1,
     icon: '/services/turnkey-projects.svg',
-    title: 'Turnkey Projects',
+    title: 'Contracting - End to End Solution',
     subtitle: 'Civil & Interior Works',
     description: 'Complete turnkey solutions including MEP Design & Build. One-stop partner for construction and interior projects.',
   },
@@ -33,7 +33,7 @@ const services = [
   {
     id: 4,
     icon: '/services/modular-kitchens.svg',
-    title: 'Modular Kitchens & Wardrobes',
+    title: 'Supply and Manufacturing of Interior Items',
     subtitle: 'Customized Furnishings',
     description: 'Premium modular kitchens, wardrobes, and customized furnishings with smart storage solutions.',
   },
