@@ -63,9 +63,18 @@ export default function AboutClient() {
 
             <main id="main-content">
                 {/* Hero Section */}
-                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-white via-gray-50 to-[#ED2028]/5">
-                    <div className="absolute top-20 right-0 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray-100 rounded-full blur-3xl" />
+                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-24">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 z-0">
+                        <Image
+                            src="/services/about.jpg"
+                            alt="About Banner"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/60" />
+                    </div>
 
                     <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
                         <FadeIn>
@@ -79,13 +88,13 @@ export default function AboutClient() {
                         </FadeIn>
 
                         <FadeIn delay={0.1}>
-                            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a0a0a] mb-6">
+                            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                                 About <span className="text-[#ED2028]">Us</span>
                             </h1>
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
-                            <p className="text-lg md:text-xl text-gray-600 font-body max-w-2xl mx-auto leading-relaxed">
+                            <p className="text-lg md:text-xl text-gray-200 font-body max-w-2xl mx-auto leading-relaxed">
                                 Award-winning interior design company since 2009. One Solution For All Your Interior Needs.
                             </p>
                         </FadeIn>

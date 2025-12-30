@@ -21,7 +21,7 @@ const coreServices = [
         subtitle: 'Civil & Interior Works',
         description: 'Complete turnkey solutions including MEP Design & Build. From concept to completion, we handle everything as your one-stop partner for construction and interior projects.',
         features: ['Complete project management', 'MEP Design & Build', 'Civil construction', 'Interior fitout'],
-        image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/turnkey-projects.jpg',
     },
     {
         id: 2,
@@ -30,7 +30,7 @@ const coreServices = [
         subtitle: 'Commercial & Corporate Spaces',
         description: 'Professional office interiors designed for productivity and brand identity. We create inspiring commercial and corporate workspaces that reflect your business values.',
         features: ['Corporate office design', 'Commercial fitout', 'Space planning', 'Brand integration'],
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/office-interiors.jpg',
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const coreServices = [
         subtitle: 'Flats & Apartments',
         description: 'Transform your home into a beautiful living space. Expert residential interior design services for flats, apartments, and independent houses with personalized styling.',
         features: ['Full home interiors', 'Flat renovation', 'Apartment design', 'Custom solutions'],
-        image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/residential-interiors.jpg',
     },
     {
         id: 4,
@@ -48,7 +48,7 @@ const coreServices = [
         subtitle: 'Customized Furnishings',
         description: 'Premium modular kitchens, wardrobes, and customized furnishings crafted to perfection. Modern designs with smart storage solutions tailored to your lifestyle.',
         features: ['Modular kitchens', 'Custom wardrobes', 'Vanity units', 'Smart storage'],
-        image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/modular-kitchens.jpg',
     },
     {
         id: 5,
@@ -57,7 +57,7 @@ const coreServices = [
         subtitle: 'Outdoor Landscaping',
         description: 'Beautiful terrace gardens and outdoor landscaping solutions. Bring nature into your urban space with vertical gardens, balcony upgrades, and landscape design.',
         features: ['Terrace gardens', 'Vertical gardens', 'Balcony design', 'Outdoor furniture'],
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/terrace-gardens.jpg',
     },
 ];
 
@@ -267,19 +267,18 @@ export default function ServicesPageClient() {
 
             <main id="main-content">
                 {/* Hero Section - Light & Graceful */}
-                <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-white via-gray-50 to-[#ED2028]/5">
-                    {/* Subtle decorative elements */}
-                    <div className="absolute top-20 right-0 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray-100 rounded-full blur-3xl" />
-
-                    {/* Grid pattern overlay */}
-                    <div
-                        className="absolute inset-0 opacity-[0.03]"
-                        style={{
-                            backgroundImage: 'linear-gradient(#0a0a0a 1px, transparent 1px), linear-gradient(90deg, #0a0a0a 1px, transparent 1px)',
-                            backgroundSize: '60px 60px'
-                        }}
-                    />
+                <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 z-0">
+                        <Image
+                            src="/services/service.jpg"
+                            alt="Services Banner"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/60" />
+                    </div>
 
                     <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
                         <FadeIn>
@@ -293,13 +292,13 @@ export default function ServicesPageClient() {
                         </FadeIn>
 
                         <FadeIn delay={0.1}>
-                            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a0a0a] mb-6">
+                            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                                 Our <span className="text-[#ED2028]">Services</span>
                             </h1>
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
-                            <p className="text-lg md:text-xl text-gray-600 font-body max-w-2xl mx-auto leading-relaxed">
+                            <p className="text-lg md:text-xl text-gray-200 font-body max-w-2xl mx-auto leading-relaxed">
                                 One Solution For All Your Interior Needs - From concept to completion,
                                 we offer comprehensive design and construction services.
                             </p>

@@ -21,7 +21,7 @@ const projects = [
         title: 'DLF Corporate Office',
         category: 'Commercial',
         type: 'Office Interior',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/office-interiors.jpg',
         location: 'Gurugram',
         description: 'Modern corporate office space with contemporary design and premium finishes.',
     },
@@ -30,7 +30,7 @@ const projects = [
         title: 'Bestech Residence',
         category: 'Residential',
         type: 'Full Home Interior',
-        image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/residential-interiors.jpg',
         location: 'Gurugram',
         description: 'Luxury residential interior with custom modular solutions.',
     },
@@ -39,7 +39,7 @@ const projects = [
         title: 'The Lodhi Hotel',
         category: 'Commercial',
         type: 'Hotel Interior',
-        image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/turnkey-projects.jpg',
         location: 'New Delhi',
         description: 'Premium hotel interior with artistic touches and luxury finishes.',
     },
@@ -48,7 +48,7 @@ const projects = [
         title: 'BPTP Office Space',
         category: 'Office',
         type: 'Corporate Interior',
-        image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/office-interiors.jpg',
         location: 'Faridabad',
         description: 'Functional office design promoting productivity and collaboration.',
     },
@@ -57,7 +57,7 @@ const projects = [
         title: 'Modern Kitchen Project',
         category: 'Modular',
         type: 'Modular Kitchen',
-        image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/modular-kitchens.jpg',
         location: 'Krishna Nagar, Delhi',
         description: 'Sleek modular kitchen with smart storage solutions.',
     },
@@ -66,7 +66,7 @@ const projects = [
         title: 'Ramprastha Apartment',
         category: 'Residential',
         type: 'Residential Interior',
-        image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/residential-interiors.jpg',
         location: 'Gurugram',
         description: 'Contemporary apartment interior with elegant design.',
     },
@@ -75,7 +75,7 @@ const projects = [
         title: 'Terrace Garden Project',
         category: 'Residential',
         type: 'Terrace Garden',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/terrace-gardens.jpg',
         location: 'South Delhi',
         description: 'Beautiful terrace garden with vertical greens and outdoor furniture.',
     },
@@ -84,7 +84,7 @@ const projects = [
         title: 'Windwod Group Office',
         category: 'Office',
         type: 'Office Fitout',
-        image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=1200&q=80',
+        image: '/services/office-interiors.jpg',
         location: 'Noida',
         description: 'Modern workspace with ergonomic design and brand integration.',
     },
@@ -107,9 +107,16 @@ export default function ProjectsPageClient() {
 
             <main id="main-content">
                 {/* Hero Section */}
-                <section className="relative min-h-[50vh] flex items-center justify-center bg-[#fafafa] overflow-hidden pt-24">
-                    <div className="absolute inset-0">
-                        <div className="absolute top-20 right-20 w-96 h-96 bg-[#ED2028]/5 rounded-full blur-3xl" />
+                <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24">
+                    <div className="absolute inset-0 z-0">
+                         <Image
+                             src="/services/project.jpg"
+                             alt="Projects Banner"
+                             fill
+                             className="object-cover"
+                             priority
+                         />
+                         <div className="absolute inset-0 bg-black/60" />
                     </div>
 
                     <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
@@ -120,13 +127,13 @@ export default function ProjectsPageClient() {
                         </FadeIn>
 
                         <FadeIn delay={0.1}>
-                            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a0a0a] mb-6">
+                            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                                 Featured <span className="text-[#ED2028]">Projects</span>
                             </h1>
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
-                            <p className="text-lg md:text-xl text-gray-600 font-body max-w-2xl mx-auto leading-relaxed">
+                            <p className="text-lg md:text-xl text-gray-200 font-body max-w-2xl mx-auto leading-relaxed">
                                 Explore our portfolio of completed projects showcasing our expertise
                                 in residential, commercial, and modular interior solutions.
                             </p>
