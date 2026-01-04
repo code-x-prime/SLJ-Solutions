@@ -48,7 +48,7 @@ export default function BrochureDownloadModal({ isOpen, onClose, brochureUrl = '
 
     const handleDownload = async () => {
         try {
-            const response = await fetch('https://desirediv-storage.blr1.cdn.digitaloceanspaces.com/Indian%20Law%20Masters/bare-act/slj-brochure.pdf');
+            const response = await fetch('https://desirediv-storage.blr1.cdn.digitaloceanspaces.com/Indian%20Law%20Masters/bare-act/SLJ%20Brochure%20New.pdf');
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
