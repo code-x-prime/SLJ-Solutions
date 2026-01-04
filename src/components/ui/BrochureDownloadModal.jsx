@@ -19,13 +19,13 @@ const countryCodes = [
     { code: '+977', country: 'Nepal', flag: '🇳🇵' },
 ];
 
-export default function BrochureDownloadModal({ isOpen, onClose, brochureUrl = '/brochure.pdf' }) {
+export default function BrochureDownloadModal({ isOpen, onClose }) {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         email: '',
     });
-    const [countryCode, setCountryCode] = useState('+91'); // Default to India
+    const [countryCode, setCountryCode] = useState('+91');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState('');
@@ -69,10 +69,10 @@ export default function BrochureDownloadModal({ isOpen, onClose, brochureUrl = '
         setError('');
 
         try {
-            // Combine country code with phone number
+
             const fullPhoneNumber = `${countryCode} ${formData.phone}`.trim();
 
-            // Send email to admin with brochure download details
+
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
@@ -96,10 +96,10 @@ export default function BrochureDownloadModal({ isOpen, onClose, brochureUrl = '
             setIsSubmitting(false);
             setIsSubmitted(true);
 
-            // Download brochure after email is sent
+
             setTimeout(() => {
                 handleDownload();
-                // Auto close after download
+
                 setTimeout(() => {
                     handleClose();
                 }, 2000);
