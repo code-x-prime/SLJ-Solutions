@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FadeIn } from '../animations/ScrollAnimations';
-import { useModal } from './EnquiryModal';
 import BrochureDownloadModal from './BrochureDownloadModal';
 import {
   Instagram, Facebook, Linkedin,
@@ -36,7 +35,7 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const { openModal } = useModal();
+
   const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
 
   return (

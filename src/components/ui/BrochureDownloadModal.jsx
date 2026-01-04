@@ -49,8 +49,8 @@ export default function BrochureDownloadModal({ isOpen, onClose, brochureUrl = '
     const handleDownload = () => {
         // Create a temporary link and trigger download
         const link = document.createElement('a');
-        link.href = brochureUrl;
-        link.download = 'SLJ-Solutions-Brochure.pdf';
+        link.href = 'https://desirediv-storage.blr1.cdn.digitaloceanspaces.com/Indian%20Law%20Masters/bare-act/slj-brochure.pdf';
+        link.download = 'slj-brochure.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
