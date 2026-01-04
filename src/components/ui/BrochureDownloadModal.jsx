@@ -46,14 +46,21 @@ export default function BrochureDownloadModal({ isOpen, onClose, brochureUrl = '
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleDownload = () => {
-        // Create a temporary link and trigger download
-        const link = document.createElement('a');
-        link.href = 'https://desirediv-storage.blr1.cdn.digitaloceanspaces.com/Indian%20Law%20Masters/bare-act/slj-brochure.pdf';
-        link.download = 'slj-brochure.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    const handleDownload = async () => {
+        try {
+            const response = await fetch('https://desirediv-storage.blr1.cdn.digitaloceanspaces.com/Indian%20Law%20Masters/bare-act/slj-brochure.pdf');
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'slj-brochure.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Download failed:', error);
+        }
     };
 
     const handleSubmit = async (e) => {
