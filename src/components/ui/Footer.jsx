@@ -211,6 +211,19 @@ export default function Footer() {
             <p className="text-gray-600 font-body text-xs">
               Interior Design Excellence Since 2009
             </p>
+
+            <p className="text-gray-600 font-body text-xs">
+              Designed & Developed by{" "}
+              <a
+                href="http://groxmedia.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Grox Media - Best Web Development Agency in India"
+                className="hover:text-[#ED2028] transition-colors"
+              >
+                Grox Media
+              </a>
+            </p>
           </div>
         </div>
       </div>
